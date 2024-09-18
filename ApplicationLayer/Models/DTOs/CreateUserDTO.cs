@@ -15,3 +15,4 @@ namespace ApplicationLayer.Models.DTOs
         public string Password { get; set; }
     }
 }
+
