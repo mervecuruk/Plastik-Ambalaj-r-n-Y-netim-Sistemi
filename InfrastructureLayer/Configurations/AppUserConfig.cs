@@ -19,7 +19,6 @@ namespace InfrastructureLayer.Configurations
                 Id = 1,
                 FirstName = "Super",
                 LastName = "Admin",
-                Address = "Ankara",
                 Email = "super@admin.com",
                 NormalizedEmail = "SUPER@ADMIN.COM",
                 EmailConfirmed = false,

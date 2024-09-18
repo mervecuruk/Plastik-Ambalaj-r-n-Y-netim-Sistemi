@@ -1,4 +1,8 @@
 
+using DomainLayer.Entities.Concrete;
+using InfrastructureLayer.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 namespace API
 {
     public class Program
@@ -14,6 +18,11 @@ namespace API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            //builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
+            builder.Services.AddDbContext<AppDbContext>();
+
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>().AddRoles<AppRole>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -23,6 +32,7 @@ namespace API
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
