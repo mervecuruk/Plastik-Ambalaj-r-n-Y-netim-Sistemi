@@ -1,4 +1,4 @@
-﻿namespace ApplicationLayer.Models.DTOs
+﻿namespace ApplicationLayer.Models.DTOs.UserDTOs
 {
     public class UpdateUserDTO
     {

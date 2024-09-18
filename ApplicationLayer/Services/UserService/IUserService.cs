@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Models.DTOs;
+﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 
 namespace ApplicationLayer.Services.UserService
 {

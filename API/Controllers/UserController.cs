@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Models.DTOs;
+﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 using ApplicationLayer.Services.UserService;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

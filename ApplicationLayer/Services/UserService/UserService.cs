@@ -1,4 +1,4 @@
-﻿using ApplicationLayer.Models.DTOs;
+﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 using DomainLayer.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
 using System;
@@ -118,14 +118,5 @@ namespace ApplicationLayer.Services.UserService
             return false;
 
         }
-
-
-
-
-
-
-
-
-
     }
 }

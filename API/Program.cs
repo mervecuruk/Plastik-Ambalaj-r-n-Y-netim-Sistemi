@@ -1,4 +1,5 @@
 
+using ApplicationLayer.Services.RoleService;
 using ApplicationLayer.Services.UserService;
 using DomainLayer.Entities.Concrete;
 using InfrastructureLayer.Contexts;
@@ -25,6 +26,7 @@ namespace API
             builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>().AddRoles<AppRole>();
 
             builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<IRoleService, RoleService>();
 
             var app = builder.Build();
 

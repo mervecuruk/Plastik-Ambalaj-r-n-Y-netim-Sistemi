@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApplicationLayer.Models.DTOs
+namespace ApplicationLayer.Models.DTOs.UserDTOs
 {
     public class CreateUserDTO
     {
