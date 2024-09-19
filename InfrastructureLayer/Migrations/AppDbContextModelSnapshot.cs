@@ -55,28 +55,28 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "d6e2b6a9-f143-4f76-9358-07f9f99a9844",
+                            ConcurrencyStamp = "ebdc12c9-9c99-4de7-a5ea-e42e4e9db39f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "07f4e4fc-d0e8-49bf-afd7-f44b1ee74339",
+                            ConcurrencyStamp = "526b462f-b99a-48f6-83dc-33c6b424684e",
                             Name = "ContentManager",
                             NormalizedName = "CONTENTMANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "29749ca7-89c5-4623-8b1f-ec58839651da",
+                            ConcurrencyStamp = "2af5dfe6-83b6-4037-8b78-d68ff0be9d7f",
                             Name = "CustomerService",
                             NormalizedName = "CUSTOMERSERVICE"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "9d02d417-0f9a-451e-91d2-a3af1161d574",
+                            ConcurrencyStamp = "c8f1d2dc-6561-4831-b029-207838db9218",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         });
@@ -174,8 +174,8 @@ namespace InfrastructureLayer.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            AddedDate = new DateTime(2024, 9, 18, 16, 4, 40, 851, DateTimeKind.Local).AddTicks(7709),
-                            ConcurrencyStamp = "61082f23-f65d-4286-af4f-99211dafca64",
+                            AddedDate = new DateTime(2024, 9, 19, 17, 2, 25, 771, DateTimeKind.Local).AddTicks(7955),
+                            ConcurrencyStamp = "4a0ac284-c250-4ad4-938e-4a312d30a93b",
                             Email = "super@admin.com",
                             EmailConfirmed = false,
                             FirstName = "Super",
@@ -184,9 +184,9 @@ namespace InfrastructureLayer.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAENH9+uZ/os6evDR9EUbs8IanZeFjmK5XVzizDu1xgqzFeHvFjkCMRYGbrH2a0lfWKA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAECtUCOeawbR50sWof0FKXUcp285f+VlfB97hqbTpQM+qpuLc6pumon52zKDEV67DEw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d3383e9a-5e82-4bfc-9fd4-6c7ff11865db",
+                            SecurityStamp = "bca4cf48-77b0-42f9-876a-91a49b2cbdd6",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
