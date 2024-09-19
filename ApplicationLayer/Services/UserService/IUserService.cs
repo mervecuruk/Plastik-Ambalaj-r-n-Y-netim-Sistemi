@@ -9,6 +9,8 @@ namespace ApplicationLayer.Services.UserService
         Task<AppUser> GetUserById(int userId);
         Task<UserDetailDTO> GetUserDetailAsync(int userId);
         Task<bool> RegisterAsync(CreateUserDTO user);
-        Task<bool> UpdateAdminAsync(int userId, UpdateUserDTO updateUserDTO);
+        Task<bool> UpdateUserAsync(int userId, UpdateUserDTO updateUserDTO);
+        Task<AppUser> GetUserByIdAsync(int userId);
+        Task<UserLoginDTO> UserLogin(string email, string password);
     }
 }

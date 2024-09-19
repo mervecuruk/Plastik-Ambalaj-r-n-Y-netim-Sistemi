@@ -1,6 +1,7 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 using DomainLayer.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +13,12 @@ namespace ApplicationLayer.Services.UserService
     public class UserService : IUserService
     {
         private readonly UserManager<AppUser> _userManager;
+        private readonly RoleManager<AppRole> _roleManager;
 
-        public UserService(UserManager<AppUser> userManager)
+        public UserService(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
         }
 
 
@@ -101,7 +104,7 @@ namespace ApplicationLayer.Services.UserService
         /// <param name="userId"></param>
         /// <param name="updateUserDTO"></param>
         /// <returns></returns>
-        public async Task<bool> UpdateAdminAsync(int userId, UpdateUserDTO updateUserDTO)
+        public async Task<bool> UpdateUserAsync(int userId, UpdateUserDTO updateUserDTO)
         {
             var user = await _userManager.FindByIdAsync(userId.ToString());
             if (user == null)
@@ -111,32 +114,31 @@ namespace ApplicationLayer.Services.UserService
             user.FirstName = updateUserDTO.FirstName;
             user.LastName = updateUserDTO.LastName;
             user.Email = updateUserDTO.Email;
+            
+
+            PasswordHasher<AppUser> hasher = new PasswordHasher<AppUser>();
+            user.PasswordHash = hasher.HashPassword(user,updateUserDTO.Password);
 
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
                 return true;
             return false;
-        }
 
-
-
-
-        /// <summary>
-        /// ı dye göre user ı bulma
-        /// </summary>
-        /// <param name="userId"></param>
-        /// <returns></returns>
-        public async Task<AppUser> GetUserById(int userId)
+        public async Task<UserLoginDTO> UserLogin(string email, string password)
         {
-            if (userId > 0)
+            UserLoginDTO userLogin = new UserLoginDTO();
+            var user = await _userManager.FindByEmailAsync(email);
+            bool pass = await _userManager.CheckPasswordAsync(user, password);
+            if (user == null || pass != true)
             {
-                var user = await _userManager.FindByIdAsync(userId.ToString());
-                if (user is null)
-                    return null;
-                return user;
+                userLogin.Error = true;
+                return userLogin;
             }
-            return null;
-           
+            var roles = await _userManager.GetRolesAsync(user);
+
+            userLogin.UserRoles = roles;
+            userLogin.Error = false;
+            return userLogin;
         }
 
 
