@@ -116,7 +116,39 @@ namespace ApplicationLayer.Services.UserService
             if (result.Succeeded)
                 return true;
             return false;
-
         }
+
+
+
+
+        /// <summary>
+        /// ı dye göre user ı bulma
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<AppUser> GetUserById(int userId)
+        {
+            if (userId > 0)
+            {
+                var user = await _userManager.FindByIdAsync(userId.ToString());
+                if (user is null)
+                    return null;
+                return user;
+            }
+            return null;
+           
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
