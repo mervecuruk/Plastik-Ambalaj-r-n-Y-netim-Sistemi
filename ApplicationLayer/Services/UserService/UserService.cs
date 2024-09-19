@@ -114,15 +114,33 @@ namespace ApplicationLayer.Services.UserService
             user.FirstName = updateUserDTO.FirstName;
             user.LastName = updateUserDTO.LastName;
             user.Email = updateUserDTO.Email;
-            
+
 
             PasswordHasher<AppUser> hasher = new PasswordHasher<AppUser>();
-            user.PasswordHash = hasher.HashPassword(user,updateUserDTO.Password);
+            user.PasswordHash = hasher.HashPassword(user, updateUserDTO.Password);
 
             var result = await _userManager.UpdateAsync(user);
             if (result.Succeeded)
                 return true;
             return false;
+        }
+
+        /// <summary>
+        /// UserId'ye ait AppUser döner
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public async Task<AppUser> GetUserByIdAsync(int userId)
+        {
+            if (userId >= 0)
+            {
+                var user = await _userManager.FindByIdAsync(userId.ToString());
+                if (user == null) return null;
+                else return user;
+            }
+            else
+                return null;
+        }
 
         public async Task<UserLoginDTO> UserLogin(string email, string password)
         {
@@ -140,16 +158,6 @@ namespace ApplicationLayer.Services.UserService
             userLogin.Error = false;
             return userLogin;
         }
-
-
-
-
-
-
-
-
-
-
 
 
     }
