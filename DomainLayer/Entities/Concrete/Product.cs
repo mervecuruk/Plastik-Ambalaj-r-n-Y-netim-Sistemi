@@ -21,7 +21,6 @@ namespace DomainLayer.Entities.Concrete
         public int? Views { get; set; }
 
 
-
         public DateTime AddedDate { get; set; }=DateTime.Now;
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }

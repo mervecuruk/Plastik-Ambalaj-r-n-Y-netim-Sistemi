@@ -9,7 +9,7 @@ namespace ApplicationLayer.Models.DTOs.UserDTOs
 {
     public class UserLoginDTO
     {
-        public IList<string> UserRoles;
+        public IEnumerable<string> UserRoles;
         public AppUser AppUser { get; set; }
         public bool Error { get; set; } = false;
     }

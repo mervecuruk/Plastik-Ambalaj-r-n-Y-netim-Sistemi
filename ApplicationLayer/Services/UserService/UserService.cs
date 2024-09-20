@@ -155,6 +155,7 @@ namespace ApplicationLayer.Services.UserService
             var roles = await _userManager.GetRolesAsync(user);
 
             userLogin.UserRoles = roles;
+            userLogin.AppUser = user;
             userLogin.Error = false;
             return userLogin;
         }

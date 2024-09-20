@@ -18,7 +18,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         public BaseRepository()
         {
             _context = new AppDbContext();
-            _dbSet=_context.Set<TEntity>();
+            _dbSet = _context.Set<TEntity>();
         }
 
         public async Task AddAsync(TEntity entity)
@@ -30,7 +30,7 @@ namespace InfrastructureLayer.Repositories.Concrete
 
         public async Task DeleteAsync(int id)
         {
-            var entity=await FindAsync(id);
+            var entity = await FindAsync(id);
             if (entity != null)
             {
                 entity.DeleteDate = DateTime.Now;
@@ -47,19 +47,19 @@ namespace InfrastructureLayer.Repositories.Concrete
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await _dbSet.Select(x=>x).Where(x => x.IsActive == true).ToListAsync();
+            return await _dbSet.Where(x => x.IsActive == true).ToListAsync();
         }
 
-        public  IQueryable<TEntity> GetAllInclude()
+        public IQueryable<TEntity> GetAllInclude()
         {
-            return _dbSet.Select(x => x).Where(x => x.IsActive == true);
+            return _dbSet.Where(x => x.IsActive == true);
         }
 
         public async Task UpdateAsync(TEntity entity)
         {
-            entity.UpdateDate= DateTime.Now;
+            entity.UpdateDate = DateTime.Now;
             entity.IsActive = true;
-            _dbSet.Entry(entity).State= EntityState.Modified;
+            _dbSet.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
     }
