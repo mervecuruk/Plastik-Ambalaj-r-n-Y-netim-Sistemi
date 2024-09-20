@@ -119,6 +119,27 @@ namespace API.Controllers
             //    return Ok(result);
             //}
 
+            JwtLoginDTO jwtLoginDTO = new JwtLoginDTO()
+            {
+                Email = email,
+                Password = password
+            };
+            var result = await _myTokenService.ValidateUser(jwtLoginDTO);
+            if (result != true) return Unauthorized();
+            return Ok(new { Token = await _myTokenService.CreateToken() });
+        }
+
+        /// <summary>
+        /// Kullanıcı LOGOUT
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return Ok();
+        }
+
 
     }
 }
