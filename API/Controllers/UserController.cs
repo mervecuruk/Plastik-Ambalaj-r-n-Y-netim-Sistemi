@@ -1,7 +1,7 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
-using ApplicationLayer.Services.HeplerService;
 using ApplicationLayer.Services.UserService;
 using DomainLayer.Entities.Concrete;
+using InfrastructureLayer.Contexts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -16,13 +16,13 @@ namespace API.Controllers
     {
         private readonly IUserService _userService;
         private readonly SignInManager<AppUser> _signInManager;
-        private readonly MyTokenService _myTokenService;
+        private readonly AppDbContext _context;
 
-        public UserController(IUserService userService, SignInManager<AppUser> signInManager, MyTokenService myTokenService)
+        public UserController(IUserService userService, SignInManager<AppUser> signInManager, AppDbContext context)
         {
             _userService = userService;
             _signInManager = signInManager;
-            _myTokenService = myTokenService;
+            _context = context;
         }
 
 
@@ -32,7 +32,6 @@ namespace API.Controllers
         /// <param name="user"></param>
         /// <returns></returns>
         [HttpPost]
-        [Authorize]
         public async Task<IActionResult> CreateUser(CreateUserDTO user)
         {
             if (await _userService.RegisterAsync(user))
@@ -46,7 +45,6 @@ namespace API.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        [Authorize]
         public async Task<ActionResult<List<UserDetailDTO>>> GetAllUsers()
         {
             var users = await _userService.GetAllUsersDetailAsync();
@@ -61,7 +59,6 @@ namespace API.Controllers
         /// <param name="userId"></param>
         /// <returns></returns>
         [HttpGet("{userId}")]
-        [Authorize]
         public async Task<IActionResult> GetUserDetail(int userId)
         {
             var user=await _userService.GetUserDetailAsync(userId);
@@ -77,7 +74,6 @@ namespace API.Controllers
         /// <param name="updateUserDTO"></param>
         /// <returns></returns>
         [HttpPut("{userId}")]
-        [Authorize]
         public async Task<IActionResult> UpdateUser(int userId, [FromBody] UpdateUserDTO updateUserDTO)
         {
             var user = await _userService.UpdateUserAsync(userId,updateUserDTO);
@@ -93,7 +89,6 @@ namespace API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        [Authorize]
         public async Task<IActionResult> GetUserById(int id)
         {
             var user = await _userService.GetUserByIdAsync(id);
@@ -108,25 +103,16 @@ namespace API.Controllers
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        [HttpGet("{email}/{password}")]
+        [HttpGet]
         public async Task<IActionResult> LoginUser(string email, string password)
         {
-            //var result = await _userService.UserLogin(email, password);
-            //if(result.Error == true) return BadRequest("Email veya Şifre Hatalı");
-            //else
-            //{
-            //    await _signInManager.SignInAsync(result.AppUser, false);
-            //    return Ok(result);
-            //}
-
-            JwtLoginDTO jwtLoginDTO = new JwtLoginDTO()
+            var result = await _userService.UserLogin(email, password);
+            if (result.Error == true) return BadRequest("Email veya Şifre Hatalı");
+            else
             {
-                Email = email,
-                Password = password
-            };
-            var result = await _myTokenService.ValidateUser(jwtLoginDTO);
-            if (result != true) return Unauthorized();
-            return Ok(new { Token = await _myTokenService.CreateToken() });
+                await _signInManager.SignInAsync(result.AppUser, false);
+                return Ok(result);
+            }
         }
 
         /// <summary>
