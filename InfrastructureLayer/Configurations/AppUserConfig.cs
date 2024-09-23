@@ -14,6 +14,8 @@ namespace InfrastructureLayer.Configurations
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)
         {
+            builder.HasIndex(x=>x.Email).IsUnique();
+
             AppUser user = new AppUser
             {
                 Id = 1,

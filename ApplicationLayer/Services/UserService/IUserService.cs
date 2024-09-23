@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
+using DomainLayer;
 using DomainLayer.Entities.Concrete;
 
 namespace ApplicationLayer.Services.UserService
@@ -11,5 +12,6 @@ namespace ApplicationLayer.Services.UserService
         Task<bool> UpdateUserAsync(int userId, UpdateUserDTO updateUserDTO);
         Task<AppUser> GetUserByIdAsync(int userId);
         Task<UserLoginDTO> UserLogin(string email, string password);
+        Task<List<AppUser>> GetUserByKeyword(string keyword);
     }
 }

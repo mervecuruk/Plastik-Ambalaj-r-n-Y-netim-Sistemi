@@ -55,6 +55,11 @@ namespace InfrastructureLayer.Repositories.Concrete
             return _dbSet.Where(x => x.IsActive == true);
         }
 
+        //public IEnumerable<TEntity> Search(string keyword)
+        //{
+        //    return _dbSet.Where(x => x.IsActive == true);
+        //}
+
         public async Task UpdateAsync(TEntity entity)
         {
             entity.UpdateDate = DateTime.Now;

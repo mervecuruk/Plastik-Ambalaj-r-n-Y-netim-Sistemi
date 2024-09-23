@@ -2,6 +2,7 @@
 using AutoMapper;
 using DomainLayer.Entities.Concrete;
 using DomainLayer.Repositories.Abstract;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationLayer.Services.ProductService
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
@@ -50,6 +51,20 @@ namespace ApplicationLayer.Services.ProductService
             var oldProduct = await _productRepository.FindAsync(product.ProductId);
             _mapper.Map(product, oldProduct);
             await _productRepository.UpdateAsync(oldProduct);
+        }
+
+        public async Task<ProductDetailsDTO> GetProductDetailsAsync(int productId)
+        {
+            var product = await _productRepository.GetAllInclude().Include(x => x.Category).Where(x => x.ProductId == productId).SingleOrDefaultAsync();
+            ProductDetailsDTO productDetailsDTO = new ProductDetailsDTO();
+            _mapper.Map(product, productDetailsDTO);
+            return productDetailsDTO;
+        }
+
+        public async Task<List<Product>> GetProductByKeyword(string keyword)
+        {
+            var products = await _productRepository.GetAllInclude().Where(x=>x.ProductName.Contains(keyword)).ToListAsync();
+            return products;
         }
 
     }

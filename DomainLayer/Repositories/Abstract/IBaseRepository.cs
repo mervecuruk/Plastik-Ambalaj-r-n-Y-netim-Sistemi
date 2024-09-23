@@ -14,6 +14,7 @@ namespace DomainLayer.Repositories.Abstract
         Task<TEntity> FindAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
         IQueryable<TEntity> GetAllInclude();
+        //IEnumerable<TEntity> Search(string keyword);
 
     }
 }

@@ -8,9 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Models\ViewModels\" />
-    <Folder Include="Services\CategoryService\" />
-    <Folder Include="Services\OfferCartMessageService\" />
-    <Folder Include="Services\OfferCartService\" />
   </ItemGroup>
 
   <ItemGroup>

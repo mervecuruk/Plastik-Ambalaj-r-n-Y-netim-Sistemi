@@ -13,6 +13,8 @@ namespace DomainLayer.Entities.Concrete
         public int AppUserId { get; set; }
         public int ProductId { get; set; }
         public int Amount { get; set; }
+        public decimal TotalPrice { get; set; }
+        public bool IsRefundRequest { get; set; } = false; // iade talebi
         public DateTime? CompletedDate { get; set; }
 
         //onaylanma durumları
@@ -27,7 +29,7 @@ namespace DomainLayer.Entities.Concrete
         public bool IsMold { get; set; } = false;
         public bool IsFinalization { get; set; } = false;
 
-        public DateTime AddedDate { get; set; }
+        public DateTime AddedDate { get; set; } = DateTime.Now;
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public bool IsActive { get; set; }

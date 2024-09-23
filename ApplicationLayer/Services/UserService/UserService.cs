@@ -1,6 +1,7 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 using DomainLayer.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
@@ -160,6 +161,14 @@ namespace ApplicationLayer.Services.UserService
             return userLogin;
         }
 
-
+        public async Task<List<AppUser>> GetUserByKeyword(string keyword)
+        {
+            var users = await _userManager.Users.Where(x => x.Email.ToLower().Contains(keyword.ToLower())).ToListAsync();
+            if (users.Count > 0)
+            {
+                return users;
+            }
+            return null;
+        }
     }
 }
