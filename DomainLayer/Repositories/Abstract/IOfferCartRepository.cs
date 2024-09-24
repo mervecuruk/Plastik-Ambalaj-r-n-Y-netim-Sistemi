@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DomainLayer.Repositories.Abstract
 {
-    public interface IOfferCartRepository:IBaseRepository<OfferCart>
+    public interface IOfferCartRepository : IBaseRepository<OfferCart>
     {
-        //Hocanın örneğinden gelen
+        //Hocanın örneğinden baktıklarımız
         Task AddToCartAsync(OfferCart cart);
         Task RemoveAllProductsForUserAsync(int userId);
 
@@ -25,5 +25,10 @@ namespace DomainLayer.Repositories.Abstract
         Task<bool> SetMoldProductionAsync(int offerCartId);
         Task<bool> SetFinalizationAsync(int offerCartId);
         Task<IEnumerable<OfferCart>> GetAllOfferCartsAsync();
+        Task<bool> ApproveOfferByVisitorAsync(int offerCartId);
+        Task<IEnumerable<OfferCart>> GetAllOfferCartsForAdminAsync();
+        Task<IEnumerable<OfferCart>> GetAllOfferCartsForCustomerServiceAsync();
+        Task<IEnumerable<OfferCart>> GetAllOfferCartsForVisitorAsync();
+        Task<IEnumerable<OfferCart>> GetAllOfferCartsIsApprovedAsync();
     }
 }

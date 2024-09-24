@@ -12,9 +12,9 @@ namespace API.Controllers
     public class OfferCartController : ControllerBase
     {
         private readonly IOfferCartService _offerCartService;
-        private readonly ILogger _logger;
+        private readonly ILogger<OfferCart> _logger;
 
-        public OfferCartController(IOfferCartService offerCartService, ILogger logger)
+        public OfferCartController(IOfferCartService offerCartService, ILogger<OfferCart> logger)
         {
             _offerCartService = offerCartService;
             _logger = logger;
@@ -36,8 +36,6 @@ namespace API.Controllers
             }
         }
 
-
-
         [HttpGet("{offerCartId}")]
         public async Task<IActionResult> ApproveByAdmin(int offerCartId)
         {
@@ -49,11 +47,10 @@ namespace API.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex,$"Admin Approved Error => {offerCartId}");
+                _logger.LogError(ex, $"Admin Approved Error => {offerCartId}");
                 return BadRequest("Error");
             }
         }
-
 
         [HttpGet("{offerCartId}")]
         public async Task<IActionResult> ApproveSamplePreparation(int offerCartId)
@@ -92,7 +89,7 @@ namespace API.Controllers
         {
             try
             {
-               IEnumerable<OfferCart> result = await _offerCartService.GetAllByUserIdAsync(appUserId);
+                IEnumerable<OfferCart> result = await _offerCartService.GetAllByUserIdAsync(appUserId);
                 _logger.LogInformation($"GetAllByUserId Result Success IEnumerable<OfferCart> => UserId: {appUserId}");
                 return Ok(result);
             }
@@ -103,13 +100,12 @@ namespace API.Controllers
             }
         }
 
-
         [HttpGet("{searchKeyword}/{appUserId}")]
         public async Task<IActionResult> GetOfferCartByKeywordAndUserId(string searchKeyword, int appUserId)
         {
             try
             {
-                List<OfferCart> result = await _offerCartService.GetOfferCartByKeywordAndUserId(searchKeyword, appUserId);
+                List<OfferCart> result = await _offerCartService.GetOfferCartByKeywordAndUserIdAsync(searchKeyword, appUserId);
                 _logger.LogInformation($"GetOfferCartByKeywordAndUserId Success => Keyword: {searchKeyword} / UserId: {appUserId}");
                 return Ok(result);
             }
@@ -119,7 +115,6 @@ namespace API.Controllers
                 return BadRequest("Error");
             }
         }
-
 
         [HttpDelete("{appUserId}")]
         public async Task<IActionResult> RemoveAllProductsForUserId(int appUserId)
@@ -197,6 +192,70 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"UpdateOfferCart Error => OfferCartId: {offerCartDto.OfferCartId}");
+                return BadRequest("Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllOfferCarts()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsAsync();
+                _logger.LogInformation($"GetAllOfferCarts Result Success IEnumerable<OfferCart>");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"GetAllOfferCarts Result Error");
+                return BadRequest("Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllOfferCartsForAdmin()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForAdminAsync();
+                _logger.LogInformation($"GetAllOfferCartsForAdmin Result Success IEnumerable<OfferCart>");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"GetAllOfferCartsForAdmin Result Error");
+                return BadRequest("Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllOfferCartsForCustomerService()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForCustomerServiceAsync();
+                _logger.LogInformation($"GetAllOfferCartsForCustomerService Result Success IEnumerable<OfferCart>");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"GetAllOfferCartsForCustomerService Result Error");
+                return BadRequest("Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllOfferCartsForVisitor()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForVisitorAsync();
+                _logger.LogInformation($"GetAllOfferCartsForVisitor Result Success IEnumerable<OfferCart>");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"GetAllOfferCartsForVisitor Result Error");
                 return BadRequest("Error");
             }
         }

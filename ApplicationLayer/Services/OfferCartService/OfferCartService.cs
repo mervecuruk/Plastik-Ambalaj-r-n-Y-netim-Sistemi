@@ -41,6 +41,11 @@ namespace ApplicationLayer.Services.OfferCartService
             return await _offerCartRepository.ApproveOfferByAdminAsync(offerCartId);
         }
 
+        public async Task<bool> ApproveOfferByVisitorAsync(int offerCartId)
+        {
+            return await _offerCartRepository.ApproveOfferByVisitorAsync(offerCartId);
+        }
+
         public async Task<bool> ApproveSamplePreparationAsync(int offerCartId)
         {
             return await _offerCartRepository.ApproveSamplePreparationAsync(offerCartId);
@@ -65,6 +70,26 @@ namespace ApplicationLayer.Services.OfferCartService
         public async Task<IEnumerable<OfferCart>> GetAllOfferCartsAsync()
         {
             return await _offerCartRepository.GetAllOfferCartsAsync();
+        }
+
+        public async Task<IEnumerable<OfferCart>> GetAllOfferCartsForAdminAsync()
+        {
+            return await _offerCartRepository.GetAllOfferCartsForAdminAsync();
+        }
+
+        public async Task<IEnumerable<OfferCart>> GetAllOfferCartsForCustomerServiceAsync()
+        {
+            return await _offerCartRepository.GetAllOfferCartsForCustomerServiceAsync();
+        }
+
+        public async Task<IEnumerable<OfferCart>> GetAllOfferCartsForVisitorAsync()
+        {
+            return await _offerCartRepository.GetAllOfferCartsForVisitorAsync();
+        }
+
+        public async Task<IEnumerable<OfferCart>> GetAllOfferCartsIsApprovedAsync()
+        {
+            return await _offerCartRepository.GetAllOfferCartsIsApprovedAsync();
         }
 
         public async Task<OfferCart> GetOfferCartByIdAsync(int offerCartId)
