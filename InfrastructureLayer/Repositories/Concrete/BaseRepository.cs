@@ -23,7 +23,6 @@ namespace InfrastructureLayer.Repositories.Concrete
 
         public async Task AddAsync(TEntity entity)
         {
-            entity.IsActive = false;
             await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
         }

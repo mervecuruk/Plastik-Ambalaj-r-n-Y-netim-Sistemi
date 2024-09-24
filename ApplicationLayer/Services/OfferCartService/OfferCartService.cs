@@ -80,7 +80,7 @@ namespace ApplicationLayer.Services.OfferCartService
             }
         }
 
-        public async Task<List<OfferCart>> GetOfferCartByKeywordAndUserId(string keyword, int appuserId)
+        public async Task<List<OfferCart>> GetOfferCartByKeywordAndUserIdAsync(string keyword, int appuserId)
         {
             return await _offerCartRepository.GetAllInclude().Where(x => x.AppUserId == appuserId && x.Product.ProductName.ToLower().Contains(keyword.ToLower())).ToListAsync();
         }

@@ -27,7 +27,7 @@ namespace ApplicationLayer.Services.OfferCartService
         Task<bool> SetFinalizationAsync(int offerCartId);
         Task<IEnumerable<OfferCart>> GetAllOfferCartsAsync();
         Task<IEnumerable<OfferCart>> GetAllByUserIdAsync(int appuserId);
-        Task<List<OfferCart>> GetOfferCartByKeywordAndUserId(string keyword, int appuserId);
+        Task<List<OfferCart>> GetOfferCartByKeywordAndUserIdAsync(string keyword, int appuserId);
 
     }
 }

@@ -1,7 +1,14 @@
+using ApplicationLayer.Mapper;
+using ApplicationLayer.Services.CategoryService;
+using ApplicationLayer.Services.OfferCartMessageService;
+using ApplicationLayer.Services.OfferCartService;
+using ApplicationLayer.Services.ProductService;
 using ApplicationLayer.Services.RoleService;
 using ApplicationLayer.Services.UserService;
 using DomainLayer.Entities.Concrete;
+using DomainLayer.Repositories.Abstract;
 using InfrastructureLayer.Contexts;
+using InfrastructureLayer.Repositories.Concrete;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,16 +28,30 @@ namespace API
 
             builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
             builder.Services.AddDbContext<AppDbContext>();
+
+            builder.Services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); // Loop a girersek bu kodu eklememiz gerekiyor.!!!!!!!
 
             builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>();
 
+            builder.Services.AddAutoMapper(x => x.AddProfile(typeof(Mapping)));
+
+            builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<IOfferCartRepository, OfferCartRepository>();
+            builder.Services.AddScoped<IOfferCartMessageRepository, OfferCartMessageRepository>();
+
+
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<IRoleService, RoleService>();
+            builder.Services.AddScoped<IProductService, ProductService>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
+            builder.Services.AddScoped<IOfferCartService, OfferCartService>();
+            builder.Services.AddScoped<IOfferCartMessageService, OfferCartMessageService>();
+
+            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 

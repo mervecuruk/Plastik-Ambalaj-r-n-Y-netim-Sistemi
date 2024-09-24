@@ -8,9 +8,9 @@ namespace ApplicationLayer.Services.CategoryService
     {
         Task AddCategoryAsync(AddCategoryDTO category);
         Task DeleteCategoryAsync(int id);
-        Task<IEnumerable<CategoryDTO>> GetAllCategorysAsync();
+        Task<IEnumerable<CategoryDTO>> GetAllCategoriesAsync();
         Task<GetAllProductsOfCategoryDTO> GetAllProductsOfCategoryAsync(int categoryId);
         Task UpdateCategoryAsync(UpdateCategoryDTO category);
-        Task<List<Category>> GetCategoryByKeyword(string keyword);
+        Task<List<Category>> GetCategoryByKeywordAsync(string keyword);
     }
 }

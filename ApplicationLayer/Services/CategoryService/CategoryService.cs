@@ -32,7 +32,7 @@ namespace ApplicationLayer.Services.CategoryService
             await _categoryRepository.AddAsync(newCategory);
         }
 
-        public async Task<IEnumerable<CategoryDTO>> GetAllCategorysAsync()
+        public async Task<IEnumerable<CategoryDTO>> GetAllCategoriesAsync()
         {
             var result = await _categoryRepository.GetAllAsync();
             List<CategoryDTO> categories = new List<CategoryDTO>();
@@ -65,7 +65,7 @@ namespace ApplicationLayer.Services.CategoryService
 
         }
 
-        public async Task<List<Category>> GetCategoryByKeyword(string keyword)
+        public async Task<List<Category>> GetCategoryByKeywordAsync(string keyword)
         {
             var categories = await _categoryRepository.GetAllInclude().Where(x => x.CategoryName.Contains(keyword)).ToListAsync();
             return categories;
