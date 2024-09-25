@@ -76,5 +76,14 @@ namespace API.Controllers
                 return NotFound();
             }
         }
+
+        [HttpGet]
+        public IActionResult GetAllMaterials()
+        {
+            var materials = _productService.GetAllMaterials()
+                                          .Select(x => new { Id = (int)x, Name = x.ToString() })
+                                          .ToList();
+            return Ok(materials);
+        }
     }
 }

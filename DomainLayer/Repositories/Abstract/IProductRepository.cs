@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Entities.Concrete;
+using DomainLayer.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace DomainLayer.Repositories.Abstract
 {
     public interface IProductRepository:IBaseRepository<Product>
     {
+        List<Material> GetAllMaterials();
     }
 }

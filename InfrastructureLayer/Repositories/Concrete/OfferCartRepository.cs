@@ -285,5 +285,110 @@ namespace InfrastructureLayer.Repositories.Concrete
             return offerCart;
         }
 
+        /// <summary>
+        /// Finalization olan OfferCartları döner AppUserId parametre ver
+        /// </summary>
+        /// <param name="appUserId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> FinalizationOfferCartsByUserIdAsync(int appUserId)
+        {
+            return await _context.OfferCarts
+               .Where(oc => oc.IsActive == true && oc.IsMold == true && oc.IsFinalization == true && oc.IsSample == true && oc.IsApproved == true && oc.AppUserId == appUserId)
+               .Include(oc => oc.AppUser)
+               .Include(oc => oc.Product)
+               .ToListAsync();
+        }
+
+        /// <summary>
+        /// Approved olan OfferCartları döner AppUserId parametre ver
+        /// </summary>
+        /// <param name="appUserId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> ApprovedOfferCartsByUserIdAsync(int appUserId)
+        {
+            return await _context.OfferCarts
+                .Where(oc => oc.IsActive == true && oc.IsApproved == true && oc.AppUserId == appUserId)
+                .Include(oc => oc.AppUser)
+                .Include(oc => oc.Product)
+                .ToListAsync();
+        }
+
+        /// <summary>
+        /// Sampled olan OfferCartları döner AppUserId parametre ver
+        /// </summary>
+        /// <param name="appUserId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> SampleOfferCartsByUserIdAsync(int appUserId)
+        {
+            return await _context.OfferCarts
+                .Where(oc => oc.IsActive == true && oc.IsApproved == true && oc.IsSample == true && oc.AppUserId == appUserId)
+                .Include(oc => oc.AppUser)
+                .Include(oc => oc.Product)
+                .ToListAsync();
+        }
+
+        /// <summary>
+        /// Mold olan OfferCartları döner AppUserId parametre ver
+        /// </summary>
+        /// <param name="appUserId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> MoldOfferCartsByUserIdAsync(int appUserId)
+        {
+            return await _context.OfferCarts
+                .Where(oc => oc.IsActive == true && oc.IsApproved == true && oc.IsSample == true && oc.IsMold == true && oc.AppUserId == appUserId)
+                .Include(oc => oc.AppUser)
+                .Include(oc => oc.Product)
+                .ToListAsync();
+        }
+
+        /// <summary>
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesi başlatır
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> OfferCardRefundRequestAsync(int offerCartId)
+        {
+            OfferCart resultOfferCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (resultOfferCart == null) return false;
+            else
+            {
+                resultOfferCart.IsRefundRequest = true;
+                _context.OfferCarts.Update(resultOfferCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesini onaylar (Admin)
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> OfferCardRefundRequestAcceptAsync(int offerCartId)
+        {
+            OfferCart resultOfferCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (resultOfferCart == null) return false;
+            else
+            {
+                resultOfferCart.AcceptRefundRequest = true;
+                _context.OfferCarts.Update(resultOfferCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// İade edilmek istenen OfferCartları döner (Admin onaylaması için / Admin kullansın)
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true).ToListAsync();
+            if (result == null) return null;
+            else
+            {
+                return result;
+            }
+        }
+
     }
 }

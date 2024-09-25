@@ -13,8 +13,10 @@ namespace DomainLayer.Entities.Concrete
         public int AppUserId { get; set; }
         public int ProductId { get; set; }
         public int Amount { get; set; }
+        public string Address { get; set; }
         public decimal TotalPrice { get; set; }
         public bool IsRefundRequest { get; set; } = false; // iade talebi
+        public bool AcceptRefundRequest { get; set; } = false; // iade işlemi onayı (Admin)
         public DateTime? CompletedDate { get; set; }
 
         //onaylanma durumları

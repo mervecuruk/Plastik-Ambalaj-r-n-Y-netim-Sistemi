@@ -34,5 +34,17 @@ namespace ApplicationLayer.Services.OfferCartService
         Task<IEnumerable<OfferCart>> GetAllOfferCartsForVisitorAsync();
         Task<IEnumerable<OfferCart>> GetAllOfferCartsIsApprovedAsync();
 
+        // DURUMLARINA GÖRE OFFERCART LİSTESİ DÖNERLER
+        Task<IEnumerable<OfferCart>> FinalizationOfferCartsByUserIdAsync(int appUserId);
+        Task<IEnumerable<OfferCart>> ApprovedOfferCartsByUserIdAsync(int appUserId);
+        Task<IEnumerable<OfferCart>> SampleOfferCartsByUserIdAsync(int appUserId);
+        Task<IEnumerable<OfferCart>> MoldOfferCartsByUserIdAsync(int appUserId);
+
+
+        // İADE İŞLEMLERİ
+        Task<bool> OfferCardRefundRequestAsync(int offerCartId);
+        Task<bool> OfferCardRefundRequestAcceptAsync(int offerCartId);
+        Task<IEnumerable<OfferCart>> RefundRequestOfferCardsAsync();
+
     }
 }

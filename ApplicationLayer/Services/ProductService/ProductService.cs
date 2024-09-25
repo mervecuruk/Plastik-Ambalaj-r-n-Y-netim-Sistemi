@@ -1,6 +1,7 @@
 ﻿using ApplicationLayer.Models.DTOs.ProductDTOs;
 using AutoMapper;
 using DomainLayer.Entities.Concrete;
+using DomainLayer.Enums;
 using DomainLayer.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -67,5 +68,9 @@ namespace ApplicationLayer.Services.ProductService
             return products;
         }
 
+        public List<Material> GetAllMaterials()
+        {
+            return _productRepository.GetAllMaterials();
+        }
     }
 }

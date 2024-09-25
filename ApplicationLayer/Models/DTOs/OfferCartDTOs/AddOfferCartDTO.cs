@@ -13,8 +13,8 @@ namespace ApplicationLayer.Models.DTOs.OfferCartDTOs
         public int AppUserId { get; set; }
         public int ProductId { get; set; }
         public int Amount { get; set; }
+        public string Address { get; set; }
         public decimal? TotalPrice { get; set; }
-        public bool IsRefundRequest { get; set; } // iade talebi
         
     }
 }

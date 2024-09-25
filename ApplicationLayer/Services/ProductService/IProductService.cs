@@ -1,5 +1,6 @@
 ﻿using ApplicationLayer.Models.DTOs.ProductDTOs;
 using DomainLayer.Entities.Concrete;
+using DomainLayer.Enums;
 
 namespace ApplicationLayer.Services.ProductService
 {
@@ -11,5 +12,6 @@ namespace ApplicationLayer.Services.ProductService
         Task<ProductDetailsDTO> GetProductDetailsAsync(int productId);
         Task UpdateProductAsync(UpdateProductDTO product);
         Task<List<Product>> GetProductByKeyword(string keyword);
+        List<Material> GetAllMaterials();
     }
 }
