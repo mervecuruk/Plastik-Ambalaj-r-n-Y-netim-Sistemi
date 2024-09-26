@@ -25,6 +25,7 @@ namespace ApplicationLayer.Services.OfferCartMessageService
         public async Task AddMessageAsync(AddOfferCartMessageDTO offerCartMessageDTO)
         {
             OfferCartMessage offerCartMessage = new OfferCartMessage();
+            offerCartMessage.IsActive = true;
             _mapper.Map(offerCartMessageDTO, offerCartMessage);
             await _offerCartMessageRepository.AddAsync(offerCartMessage);
         }

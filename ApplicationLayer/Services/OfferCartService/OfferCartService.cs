@@ -30,6 +30,7 @@ namespace ApplicationLayer.Services.OfferCartService
         public async Task<OfferCart> AddOfferCartAsync(AddOfferCartDTO offerCart)
         {
             OfferCart newOfferCart = new OfferCart();
+            newOfferCart.IsActive = true;
             _mapper.Map(offerCart, newOfferCart);
             return await _offerCartRepository.AddOfferCartAsync(newOfferCart);
         }

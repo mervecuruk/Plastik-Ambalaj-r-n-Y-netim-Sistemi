@@ -21,10 +21,10 @@ namespace DomainLayer.Entities.Concrete
         public int? Views { get; set; }
 
 
-        public DateTime AddedDate { get; set; }=DateTime.Now;
+        public DateTime AddedDate { get; set; } = DateTime.Now;
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
-        public bool IsActive { get; set; }
+        public bool IsActive { get; set; } = false;
 
 
         //Navigation Property

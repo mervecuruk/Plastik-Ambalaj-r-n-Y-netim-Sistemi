@@ -1,4 +1,5 @@
-﻿using ApplicationLayer.Models.DTOs.CategoryDTOs;
+﻿using ApplicationLayer.Models.DTOs.BlogDTOs;
+using ApplicationLayer.Models.DTOs.CategoryDTOs;
 using ApplicationLayer.Models.DTOs.OfferCartDTOs;
 using ApplicationLayer.Models.DTOs.OfferCartMessageDTOs;
 using ApplicationLayer.Models.DTOs.ProductDTOs;
@@ -30,6 +31,11 @@ namespace ApplicationLayer.Mapper
             CreateMap<OfferCart, AddOfferCartDTO>().ReverseMap();
 
             CreateMap<OfferCartMessage, AddOfferCartMessageDTO>().ReverseMap();
+
+            CreateMap<Blog, AddBlogDTO>().ReverseMap();
+            CreateMap<Blog, BlogDTO>().ReverseMap();
+            CreateMap<Blog, BlogDetailsDTO>().ReverseMap();
+            CreateMap<Blog, UpdateBlogDTO>().ReverseMap();
         }
     }
 }

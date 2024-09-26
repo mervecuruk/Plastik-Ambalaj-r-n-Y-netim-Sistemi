@@ -85,5 +85,23 @@ namespace API.Controllers
                                           .ToList();
             return Ok(materials);
         }
+
+        // id bilgisini ald. productı aktifleştirelim.
+        [HttpGet("{id}")]
+        public async Task<IActionResult> MakeProductActive(int id)
+        {
+            var product = await _productService.GetProductDetailsAsync(id);
+            if (product is null) return NotFound();
+            try
+            {
+                await _productService.GetProductDetailsAsync(id);
+                return Ok("Aktifleştirildi");
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+
+        }
     }
 }

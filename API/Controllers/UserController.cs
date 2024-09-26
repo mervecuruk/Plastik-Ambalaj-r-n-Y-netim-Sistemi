@@ -103,7 +103,7 @@ namespace API.Controllers
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        [HttpGet]
+        [HttpGet("{email}/{password}")]
         public async Task<IActionResult> LoginUser(string email, string password)
         {
             var result = await _userService.UserLogin(email, password);

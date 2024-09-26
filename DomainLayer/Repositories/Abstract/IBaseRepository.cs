@@ -13,8 +13,9 @@ namespace DomainLayer.Repositories.Abstract
         Task DeleteAsync(int id);
         Task<TEntity> FindAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllForAdminAsync();
         IQueryable<TEntity> GetAllInclude();
-        //IEnumerable<TEntity> Search(string keyword);
+        Task<bool> GetActiveAsync(int id);
 
     }
 }

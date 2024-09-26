@@ -1,4 +1,5 @@
 using ApplicationLayer.Mapper;
+using ApplicationLayer.Services.BlogService;
 using ApplicationLayer.Services.CategoryService;
 using ApplicationLayer.Services.OfferCartMessageService;
 using ApplicationLayer.Services.OfferCartService;
@@ -44,6 +45,7 @@ namespace API
             builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
             builder.Services.AddScoped<IOfferCartRepository, OfferCartRepository>();
             builder.Services.AddScoped<IOfferCartMessageRepository, OfferCartMessageRepository>();
+            builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 
 
             builder.Services.AddScoped<IUserService, UserService>();
@@ -52,6 +54,7 @@ namespace API
             builder.Services.AddScoped<ICategoryService, CategoryService>();
             builder.Services.AddScoped<IOfferCartService, OfferCartService>();
             builder.Services.AddScoped<IOfferCartMessageService, OfferCartMessageService>();
+            builder.Services.AddScoped<IBlogService, BlogService>();
 
             //ILogger
             builder.Services.AddLogging();

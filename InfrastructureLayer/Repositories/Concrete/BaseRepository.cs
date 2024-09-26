@@ -44,9 +44,22 @@ namespace InfrastructureLayer.Repositories.Concrete
             return await _dbSet.FindAsync(id);
         }
 
+        public async Task<bool> GetActiveAsync(int id)
+        {
+            TEntity entity = await FindAsync(id);
+            entity.IsActive=true;
+            await UpdateAsync(entity);
+            return true;
+        }
+
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _dbSet.Where(x => x.IsActive == true).ToListAsync();
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllForAdminAsync()
+        {
+            return await _dbSet.Where(x => x.IsActive == false).ToListAsync();
         }
 
         public IQueryable<TEntity> GetAllInclude()

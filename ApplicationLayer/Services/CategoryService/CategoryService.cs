@@ -28,6 +28,7 @@ namespace ApplicationLayer.Services.CategoryService
         public async Task AddCategoryAsync(AddCategoryDTO category)
         {
             Category newCategory = new Category();
+            newCategory.IsActive= true;
             _mapper.Map(category, newCategory);
             await _categoryRepository.AddAsync(newCategory);
         }

@@ -64,13 +64,33 @@ namespace ApplicationLayer.Services.ProductService
 
         public async Task<List<Product>> GetProductByKeyword(string keyword)
         {
-            var products = await _productRepository.GetAllInclude().Where(x=>x.ProductName.Contains(keyword)).ToListAsync();
+            var products = await _productRepository.GetAllInclude().Where(x => x.ProductName.Contains(keyword)).ToListAsync();
             return products;
         }
 
         public List<Material> GetAllMaterials()
         {
             return _productRepository.GetAllMaterials();
+        }
+
+        public async Task<IEnumerable<ProductDTO>> GetAllProductsForAdminAsync()
+        {
+            var result = await _productRepository.GetAllAsync();
+            List<ProductDTO> products = new List<ProductDTO>();
+            _mapper.Map(result, products);
+            return products;
+        }
+
+        public async Task<bool> GetActiveAsync(int id)
+        {
+            if (id == 0 || await GetProductDetailsAsync(id) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return await _productRepository.GetActiveAsync(id);
+            }
         }
     }
 }

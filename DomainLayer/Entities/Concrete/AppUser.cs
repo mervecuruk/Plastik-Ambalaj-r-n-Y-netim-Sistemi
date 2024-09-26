@@ -16,5 +16,6 @@ namespace DomainLayer.Entities.Concrete
         public DateTime? UpdateDate { get; set; }
         public DateTime? DeleteDate { get; set; }
         public bool IsActive { get; set; } = true;
+        public ICollection<Blog>? Blogs { get; set; }
     }
 }
