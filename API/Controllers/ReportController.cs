@@ -27,7 +27,7 @@ namespace API.Controllers
             return Ok(filteredResult);
         }
 
-        [HttpGet]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetUserActivityReport(int userId)
         {
             var result = await _offerCartService.GetAllByUserIdAsync(userId);
@@ -76,11 +76,11 @@ namespace API.Controllers
                                        .Select(x => new
                                        {
                                            x.OfferCartId,
-                                           x.Product.ProductName,
+                                           ProductName = x.Product != null ? x.Product.ProductName : "Product not available",
                                            x.AddedDate,
-                                           RejectionReason = x.OfferCartMessages.Any()
-                                               ? string.Join(", ", x.OfferCartMessages.Select(m => m.Message))
-                                               : "No reason provided"
+                                           RejectionReason = x.OfferCartMessages != null && x.OfferCartMessages.Any()
+                                       ? string.Join(", ", x.OfferCartMessages.Select(m => m.Message))
+                                       : "No reason provided"
                                        });
             return Ok(rejectedOffers);
         }

@@ -92,5 +92,17 @@ namespace ApplicationLayer.Services.ProductService
                 return await _productRepository.GetActiveAsync(id);
             }
         }
+
+        //Resim yükleme metodu
+        public async Task<bool> UploadProductImageAsync(int productId, string imagePath)
+        {
+            return await _productRepository.UploadProductImageAsync(productId, imagePath);
+        }
+
+
+        public async Task<bool> FindProduct(int ProductId)
+        {
+            return await _productRepository.FindProduct(ProductId);
+        }
     }
 }

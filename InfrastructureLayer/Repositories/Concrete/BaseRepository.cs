@@ -74,8 +74,6 @@ namespace InfrastructureLayer.Repositories.Concrete
 
         public async Task UpdateAsync(TEntity entity)
         {
-            entity.UpdateDate = DateTime.Now;
-            entity.IsActive = true;
             _dbSet.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }

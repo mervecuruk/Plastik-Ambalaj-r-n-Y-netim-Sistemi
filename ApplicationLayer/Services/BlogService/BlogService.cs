@@ -27,6 +27,7 @@ namespace ApplicationLayer.Services.BlogService
         public async Task AddBlogAsync(AddBlogDTO blog)
         {
             Blog newBlog = new Blog();
+            newBlog.IsActive = true;
             _mapper.Map(blog, newBlog);
             await _blogRepository.AddAsync(newBlog);
         }

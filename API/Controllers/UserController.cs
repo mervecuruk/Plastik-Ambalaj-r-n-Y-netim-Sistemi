@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Security.Claims;
 
 namespace API.Controllers
 {
@@ -124,6 +125,18 @@ namespace API.Controllers
         {
             await _signInManager.SignOutAsync();
             return Ok();
+        }
+
+        /// <summary>
+        /// Kullanıcı id sini claim ile bul.
+        /// </summary>
+        /// <param name="claims"></param>
+        /// <returns></returns>
+        [HttpGet("{claims}")]
+        public async Task<IActionResult> GetUserIdAsync(ClaimsPrincipal claims)
+        {
+            var userId = await _userService.GetUserIdAsync(claims);
+            return Ok(userId);
         }
 
 

@@ -37,11 +37,15 @@ namespace API.Controllers
             return Ok(blogDto);
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateBlog(UpdateBlogDTO blogDTO)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateBlog(int id, UpdateBlogDTO blogDTO)
         {
             try
             {
+                if (id != blogDTO.BlogId)
+                {
+                    return BadRequest();
+                }
                 await _blogService.UpdateBlogAsync(blogDTO);
                 return Ok();
             }

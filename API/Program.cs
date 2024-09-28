@@ -1,6 +1,7 @@
 using ApplicationLayer.Mapper;
 using ApplicationLayer.Services.BlogService;
 using ApplicationLayer.Services.CategoryService;
+using ApplicationLayer.Services.LogService;
 using ApplicationLayer.Services.OfferCartMessageService;
 using ApplicationLayer.Services.OfferCartService;
 using ApplicationLayer.Services.ProductService;
@@ -34,6 +35,7 @@ namespace API
             builder.Logging.AddConsole();
 
             builder.Services.AddDbContext<AppDbContext>();
+            builder.Services.AddDbContext<LogDbContext>();
 
             builder.Services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); // Loop a girersek bu kodu eklememiz gerekiyor.!!!!!!!
 
@@ -46,6 +48,7 @@ namespace API
             builder.Services.AddScoped<IOfferCartRepository, OfferCartRepository>();
             builder.Services.AddScoped<IOfferCartMessageRepository, OfferCartMessageRepository>();
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
+            builder.Services.AddScoped<ILogRepository, LogRepository>();
 
 
             builder.Services.AddScoped<IUserService, UserService>();
@@ -55,6 +58,7 @@ namespace API
             builder.Services.AddScoped<IOfferCartService, OfferCartService>();
             builder.Services.AddScoped<IOfferCartMessageService, OfferCartMessageService>();
             builder.Services.AddScoped<IBlogService, BlogService>();
+            builder.Services.AddScoped<ILogService, LogService>();
 
             //ILogger
             builder.Services.AddLogging();

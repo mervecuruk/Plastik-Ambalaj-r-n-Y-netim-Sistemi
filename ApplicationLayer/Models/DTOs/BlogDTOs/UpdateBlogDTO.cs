@@ -14,7 +14,5 @@ namespace ApplicationLayer.Models.DTOs.BlogDTOs
         public string Content { get; set; }
         public string? ImageUrl { get; set; }
         public string? SourceUrl { get; set; }
-
-        public DateTime? UpdateDate { get; set; }
     }
 }

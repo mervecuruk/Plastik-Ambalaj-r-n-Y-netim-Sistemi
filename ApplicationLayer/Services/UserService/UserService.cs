@@ -6,6 +6,7 @@ using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -169,6 +170,12 @@ namespace ApplicationLayer.Services.UserService
                 return users;
             }
             return null;
+        }
+
+        public async Task<int> GetUserIdAsync(ClaimsPrincipal claims)
+        {
+            var user = await _userManager.GetUserAsync(claims);
+            return user.Id;
         }
     }
 }

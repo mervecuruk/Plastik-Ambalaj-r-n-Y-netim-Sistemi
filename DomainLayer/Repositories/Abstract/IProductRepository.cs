@@ -11,5 +11,9 @@ namespace DomainLayer.Repositories.Abstract
     public interface IProductRepository : IBaseRepository<Product>
     {
         List<Material> GetAllMaterials();
+
+        //resim yükleme metodu
+        Task<bool> UploadProductImageAsync(int productId, string imagePath);
+        Task<bool> FindProduct(int ProductId);
     }
 }

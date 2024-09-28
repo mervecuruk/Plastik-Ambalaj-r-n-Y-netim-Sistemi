@@ -1,6 +1,7 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
 using DomainLayer;
 using DomainLayer.Entities.Concrete;
+using System.Security.Claims;
 
 namespace ApplicationLayer.Services.UserService
 {
@@ -13,5 +14,6 @@ namespace ApplicationLayer.Services.UserService
         Task<AppUser> GetUserByIdAsync(int userId);
         Task<UserLoginDTO> UserLogin(string email, string password);
         Task<List<AppUser>> GetUserByKeyword(string keyword);
+        Task<int> GetUserIdAsync(ClaimsPrincipal claims);
     }
 }
