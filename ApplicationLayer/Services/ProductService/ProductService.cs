@@ -27,6 +27,7 @@ namespace ApplicationLayer.Services.ProductService
         {
             Product newProduct = new Product();
             _mapper.Map(product, newProduct);
+            newProduct.Material = (Material)product.MaterialId;
             await _productRepository.AddAsync(newProduct);
         }
 
@@ -51,6 +52,7 @@ namespace ApplicationLayer.Services.ProductService
         {
             var oldProduct = await _productRepository.FindAsync(product.ProductId);
             _mapper.Map(product, oldProduct);
+            oldProduct.Material = (Material)product.MaterialId;
             await _productRepository.UpdateAsync(oldProduct);
         }
 
@@ -75,7 +77,7 @@ namespace ApplicationLayer.Services.ProductService
 
         public async Task<IEnumerable<ProductDTO>> GetAllProductsForAdminAsync()
         {
-            var result = await _productRepository.GetAllAsync();
+            var result = await _productRepository.GetAllForAdminAsync();
             List<ProductDTO> products = new List<ProductDTO>();
             _mapper.Map(result, products);
             return products;
@@ -94,11 +96,12 @@ namespace ApplicationLayer.Services.ProductService
         }
 
         //Resim yükleme metodu
-        public async Task<bool> UploadProductImageAsync(int productId, string imagePath)
+        public async Task<bool> UploadProductImageAsync(UploadImageDTO uploadImageDTO)
         {
-            return await _productRepository.UploadProductImageAsync(productId, imagePath);
+            Product oldProduct = await _productRepository.FindAsync(uploadImageDTO.ProductId);
+            oldProduct.ImageUrl = uploadImageDTO.ImageUrl;
+            return await _productRepository.UploadProductImageAsync(oldProduct);
         }
-
 
         public async Task<bool> FindProduct(int ProductId)
         {

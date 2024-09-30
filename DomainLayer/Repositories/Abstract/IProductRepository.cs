@@ -13,7 +13,7 @@ namespace DomainLayer.Repositories.Abstract
         List<Material> GetAllMaterials();
 
         //resim yükleme metodu
-        Task<bool> UploadProductImageAsync(int productId, string imagePath);
+        Task<bool> UploadProductImageAsync(Product product);
         Task<bool> FindProduct(int ProductId);
     }
 }

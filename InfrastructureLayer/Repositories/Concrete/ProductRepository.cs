@@ -19,13 +19,14 @@ namespace InfrastructureLayer.Repositories.Concrete
         }
 
         //Product için resim yükleme metodu
-        public async Task<bool> UploadProductImageAsync(int productId, string imagePath)
+        public async Task<bool> UploadProductImageAsync(Product product)
         {
-            var product = await _context.Products.FindAsync(productId);
+            var productOld = await _context.Products.FindAsync(product.ProductId);
             if (product == null) return false;
 
-            product.ImageUrl = imagePath;
-            product.UpdateDate = DateTime.Now;
+            productOld.ImageUrl = product.ImageUrl;
+            productOld.UpdateDate = DateTime.Now;
+            _context.Products.Update(productOld);
             await _context.SaveChangesAsync();
             return true;
         }

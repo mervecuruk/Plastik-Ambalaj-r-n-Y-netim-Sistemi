@@ -15,10 +15,10 @@ namespace ApplicationLayer.Services.ProductService
         Task<List<Product>> GetProductByKeyword(string keyword);
         List<Material> GetAllMaterials();
         Task<bool> GetActiveAsync(int id);
-        //resim yükleme metodu
-        Task<bool> UploadProductImageAsync(int productId, string imagePath);
 
-        //
+        //resim yükleme metodu
+        Task<bool> UploadProductImageAsync(UploadImageDTO uploadImageDTO);
+
         Task<bool> FindProduct(int ProductId);
     }
 }

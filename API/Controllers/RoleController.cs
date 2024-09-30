@@ -32,7 +32,6 @@ namespace API.Controllers
             return BadRequest("Bir hata meydana geldi");
         }
 
-
         [HttpGet]
         public async Task<IActionResult> GetAllRoles()
         {
@@ -40,7 +39,6 @@ namespace API.Controllers
             if (result == null) return BadRequest("Hiçbir Role Bulunamadı");
             else return Ok(result);
         }
-
 
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateRole(int id, UpdateRoleDTO updateDTO)
@@ -57,13 +55,20 @@ namespace API.Controllers
             }
         }
 
-
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRole(int id)
         {
             bool result = await _roleService.DeleteRoleAsync(id);
             if (result == false) return BadRequest("Bir hata meydana geldi");
             return Ok();
-        } 
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> ChangeUserRole(ChangeUserRoleVM vm)
+        {
+            var result = await _roleService.ChangeUserRoleAsync(vm);
+            if (result) return Ok();
+            return BadRequest();
+        }
     }
 }

@@ -90,65 +90,31 @@ namespace API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> MakeProductActive(int id)
         {
-            var product = await _productService.GetProductDetailsAsync(id);
-            if (product is null) return NotFound();
             try
             {
-                await _productService.GetProductDetailsAsync(id);
+                await _productService.GetActiveAsync(id);
                 return Ok("Aktifleştirildi");
             }
             catch (Exception)
             {
                 return BadRequest();
             }
-
         }
 
-
-        //resim yükleme metodu
-        [HttpPost("{productId}")]
-        public async Task<IActionResult> UploadProductImage(int productId, IFormFile file)
+        //yeni resim ekleme deneme metodu
+        [HttpPost]
+        public async Task<IActionResult> UpdateProductImage(UploadImageDTO uploadImageDTO)
         {
-            if (file == null || file.Length == 0)
-                return BadRequest("Resim yüklenemedi");
-
-            try
-            {
-                // Dosya yolunu oluşturma
-                var folderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath); // Klasör yoksa oluştur
-                }
-
-                // Dosya adını benzersiz hale getirmek için
-                var fileName = Path.GetFileName(file.FileName);
-                var filePath = Path.Combine(folderPath, fileName);
-
-                // Dosyayı belirtilen klasöre kaydetme
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await file.CopyToAsync(stream);
-                }
-
-                // Ürün resmi yükleme: Veritabanına kaydedilecek yolun güncellenmesi
-                var relativePath = $"{fileName}"; // Web'e uygun yol
-                var result = await _productService.UploadProductImageAsync(productId, relativePath); // Veritabanına relative yolu kaydedin
-                if (!result) return NotFound("Ürün bulunamadı");
-
-                return Ok(new { imageUrl = relativePath }); // Yüklenen resmin URL'sini döndür
-            }
-            catch (Exception ex)
-            {
-                // Hata durumunda geri dönüş
-                return StatusCode(500, new { message = $"Bir hata oluştu: {ex.Message}" });
-            }
+            await _productService.UploadProductImageAsync(uploadImageDTO);
+            return Ok();
         }
 
-
-
-
-
+        //Admin onayı için false olan ürünleri listeleyen metot
+        [HttpGet]
+        public async Task<IActionResult> GetAllProductsForAdmin()
+        {
+            return Ok(await _productService.GetAllProductsForAdminAsync());
+        }
 
         [HttpGet("{ProductId}")]
         public async Task<IActionResult> FindProduct(int ProductId)

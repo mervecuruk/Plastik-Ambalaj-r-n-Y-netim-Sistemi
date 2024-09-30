@@ -1,4 +1,5 @@
-﻿using DomainLayer.Entities.Concrete;
+﻿using ApplicationLayer.Models.DTOs.RoleDTOs;
+using DomainLayer.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,12 +12,14 @@ namespace ApplicationLayer.Services.RoleService
 {
     public class RoleService : IRoleService
     {
-       
-        private readonly RoleManager<AppRole> _roleManager;
 
-        public RoleService(RoleManager<AppRole> roleManager)
+        private readonly RoleManager<AppRole> _roleManager;
+        private readonly UserManager<AppUser> _userManager;
+
+        public RoleService(RoleManager<AppRole> roleManager, UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
+            _userManager = userManager;
         }
 
         /// <summary>
@@ -48,8 +51,8 @@ namespace ApplicationLayer.Services.RoleService
             {
                 return false;
             }
-            var role = new AppRole() 
-            { 
+            var role = new AppRole()
+            {
                 Name = roleName,
                 ConcurrencyStamp = Guid.NewGuid().ToString(),
             };
@@ -103,6 +106,34 @@ namespace ApplicationLayer.Services.RoleService
             if (role == null)
                 return null;
             else return role;
+        }
+
+        //bir kullanıcnın rolünü değişirme
+        public async Task<bool> ChangeUserRoleAsync(ChangeUserRoleVM vm)
+        {
+            var user = await _userManager.FindByIdAsync(vm.UserId.ToString());
+            if (user == null)
+            {
+                throw new ArgumentException("Kullanıcı Bulunamadı");
+            }
+            var currentRoles = await _userManager.GetRolesAsync(user);
+
+            // Mevcut rollerden hepsini kaldır
+            var removeRolesResult = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            if (!removeRolesResult.Succeeded)
+            {
+                return false; // Roller kaldırılırken hata oluştu
+            }
+            var role = await _roleManager.FindByIdAsync(vm.NewRole.ToString());
+            var UpdateRole = await _roleManager.UpdateAsync(role);
+
+            if (!UpdateRole.Succeeded)
+            {
+                return false;
+            }
+            var addRoleResult = await _userManager.AddToRoleAsync(user, role.Name);  //kullanıcyıa yeni role ekler
+            return true;
+
         }
     }
 }

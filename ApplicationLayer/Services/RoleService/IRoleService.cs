@@ -1,4 +1,5 @@
-﻿using DomainLayer.Entities.Concrete;
+﻿using ApplicationLayer.Models.DTOs.RoleDTOs;
+using DomainLayer.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -19,5 +20,6 @@ namespace ApplicationLayer.Services.RoleService
         Task<bool> UpdateRoleAsync(int roleId, string newRoleName);
 
         Task<bool> DeleteRoleAsync(int roleId);
+        Task<bool> ChangeUserRoleAsync(ChangeUserRoleVM vm);
     }
 }
