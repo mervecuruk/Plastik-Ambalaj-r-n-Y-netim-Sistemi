@@ -40,6 +40,10 @@ namespace API.Controllers
             var result = await _offerCartService.GetAllOfferCartsAsync();
             var offerStatus = result.Select(x => new
             {
+                x.AppUser.FirstName,
+                x.AppUser.LastName,
+                x.Product.ProductId,
+                x.Product.Price,
                 x.Product.ProductName,
                 OfferStatus = x.IsApproved ? "Approved" : "Pending",
             });
@@ -90,11 +94,11 @@ namespace API.Controllers
         public async Task<IActionResult> GetMoldProductionReport()
         {
             var result = await _offerCartService.GetAllOfferCartsAsync();
-            var moldProductionReport = result.Where(x => x.IsMold).Select(x => new
+            var moldProductionReport = result.Where(x => x.IsApproved).Select(x => new
             {
                 x.OfferCartId,
                 x.Product.ProductName,
-                MoldProductionStatus = x.IsMold ? "Completed" : "In Progress"
+                MoldProductionStatus = x.IsMold == true ? "Completed" : "In Progress"
             });
             return Ok(moldProductionReport);
         }
@@ -103,7 +107,7 @@ namespace API.Controllers
         public async Task<IActionResult> GetProductAccordingToLike()
         {
             var result = await _offerCartService.GetAllOfferCartsAsync();
-            var filteredResult = result.OrderByDescending(x => x.Product.Likes).Select(x => new
+            var filteredResult = result.Where(x => x.Product.Likes != null).OrderByDescending(x => x.Product.Likes).Select(x => new
             {
                 x.Product.ProductName,
                 x.Product.Likes,
@@ -115,10 +119,25 @@ namespace API.Controllers
         public async Task<IActionResult> GetProductAccordingToViews()
         {
             var result = await _offerCartService.GetAllOfferCartsAsync();
-            var filteredResult = result.OrderByDescending(x => x.Product.Views).Select(x => new
+            var filteredResult = result.Where(x => x.Product.Views != null).OrderByDescending(x => x.Product.Views).Select(x => new
             {
                 x.Product.ProductName,
                 x.Product.Views,
+            });
+            return Ok(filteredResult);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetProductTopSelling()
+        {
+            var result = await _offerCartService.GetAllOfferCartsAsync();
+            var filteredResult = result.OrderByDescending(x => x.Amount).Select(x => new
+            {
+                x.Product.Views,
+                x.Product.ProductName,
+                x.Product.Price,
+                x.Amount,
+                x.TotalPrice
             });
             return Ok(filteredResult);
         }

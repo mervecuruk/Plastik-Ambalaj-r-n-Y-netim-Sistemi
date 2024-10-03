@@ -30,13 +30,13 @@ namespace API.Controllers
             {
                 OfferCart offer = await _offerCartService.AddOfferCartAsync(offerCart);
                 _logger.LogInformation($"Offer cart is being added => {offerCart}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"Offer cart is being added => {offerCart}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"Offer cart is being added => {offerCart}", "-", offerCart.AppUserId);
                 return Ok(offer);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"An error occurred while adding offer cart => {offerCart}");
-                await _logService.AddLogAsync("Error", "OfferCartController", $"An error occurred while adding offer cart => {offerCart}", ex.ToString(), null);
+                await _logService.AddLogAsync("Error", "OfferCartController", $"An error occurred while adding offer cart => {offerCart}", ex.ToString(), offerCart.AppUserId);
                 return BadRequest("Add OfferCart Error");
             }
         }
@@ -48,7 +48,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.ApproveOfferByAdminAsync(offerCartId);
                 _logger.LogInformation($"Approved By Admin Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"Approved By Admin Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"Approved By Admin Success => {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -66,7 +66,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.ApproveSamplePreparationAsync(offerCartId);
                 _logger.LogInformation($"Approved Sample Preparation Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"Approved Sample Preparation Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"Approved Sample Preparation Success => {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -84,7 +84,7 @@ namespace API.Controllers
             {
                 bool deleteResult = await _offerCartService.DeleteOfferCartAsync(offerCartId);
                 _logger.LogInformation($"OfferCart Delete Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCart Delete Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCart Delete Success => {offerCartId}", "-", null);
                 return Ok(deleteResult);
             }
             catch (Exception ex)
@@ -102,7 +102,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllByUserIdAsync(appUserId);
                 _logger.LogInformation($"GetAllByUserId Result Success IEnumerable<OfferCart> => UserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllByUserId Result Success IEnumerable<OfferCart> => UserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllByUserId Result Success IEnumerable<OfferCart> => UserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -120,7 +120,7 @@ namespace API.Controllers
             {
                 List<OfferCart> result = await _offerCartService.GetOfferCartByKeywordAndUserIdAsync(searchKeyword, appUserId);
                 _logger.LogInformation($"GetOfferCartByKeywordAndUserId Success => Keyword: {searchKeyword} / UserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartByKeywordAndUserId Success => Keyword: {searchKeyword} / UserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartByKeywordAndUserId Success => Keyword: {searchKeyword} / UserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -138,7 +138,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.RemoveAllProductsForUserAsync(appUserId);
                 _logger.LogInformation($"RemoveAllProductsForUser Success => UserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"RemoveAllProductsForUser Success => UserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"RemoveAllProductsForUser Success => UserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -156,7 +156,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.SetFinalizationAsync(offerCartId);
                 _logger.LogInformation($"SetFinalization Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"SetFinalization Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"SetFinalization Success => {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -174,7 +174,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.SetMoldProductionAsync(offerCartId);
                 _logger.LogInformation($"SetMoldProduction Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"SetMoldProduction Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"SetMoldProduction Success => {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -192,7 +192,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.ShowSampleButtonAsync(offerCartId);
                 _logger.LogInformation($"ShowSampleButton Success => {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"ShowSampleButton Success => {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"ShowSampleButton Success => {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -210,7 +210,7 @@ namespace API.Controllers
             {
                 OfferCart result = await _offerCartService.UpdateOfferCartAsync(offerCartDto);
                 _logger.LogInformation($"UpdateOfferCart Success => OfferCartId: {offerCartDto.OfferCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"UpdateOfferCart Success => OfferCartId: {offerCartDto.OfferCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"UpdateOfferCart Success => OfferCartId: {offerCartDto.OfferCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -228,7 +228,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsAsync();
                 _logger.LogInformation($"GetAllOfferCarts Result Success IEnumerable<OfferCart>");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCarts Result Success IEnumerable<OfferCart>", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCarts Result Success IEnumerable<OfferCart>", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -246,7 +246,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForAdminAsync();
                 _logger.LogInformation($"GetAllOfferCartsForAdmin Result Success IEnumerable<OfferCart>");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForAdmin Result Success IEnumerable<OfferCart>", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForAdmin Result Success IEnumerable<OfferCart>", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -264,7 +264,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForCustomerServiceAsync();
                 _logger.LogInformation($"GetAllOfferCartsForCustomerService Result Success IEnumerable<OfferCart>");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForCustomerService Result Success IEnumerable<OfferCart>", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForCustomerService Result Success IEnumerable<OfferCart>", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -282,7 +282,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsForVisitorAsync();
                 _logger.LogInformation($"GetAllOfferCartsForVisitor Result Success IEnumerable<OfferCart>");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForVisitor Result Success IEnumerable<OfferCart>", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsForVisitor Result Success IEnumerable<OfferCart>", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -302,7 +302,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.GetAllOfferCartsIsApprovedAsync();
                 _logger.LogInformation($"GetAllOfferCartsIsApproved Result Success IEnumerable<OfferCart>");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsIsApproved Result Success IEnumerable<OfferCart>", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetAllOfferCartsIsApproved Result Success IEnumerable<OfferCart>", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -320,7 +320,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.OfferCardRefundRequestAsync(offerCartId);
                 _logger.LogInformation($"OfferCardRefundRequest Success => OfferCartId {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCardRefundRequest Success => OfferCartId {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCardRefundRequest Success => OfferCartId {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -338,7 +338,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.OfferCardRefundRequestAcceptAsync(offerCartId);
                 _logger.LogInformation($"OfferCardRefundRequestAccept Success => OfferCartId {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCardRefundRequestAccept Success => OfferCartId {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"OfferCardRefundRequestAccept Success => OfferCartId {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -357,7 +357,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.RefundRequestOfferCardsAsync();
                 _logger.LogInformation($"GetRefundRequestOfferCards Success");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetRefundRequestOfferCards Success", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetRefundRequestOfferCards Success", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -375,7 +375,7 @@ namespace API.Controllers
             {
                 OfferCart result = await _offerCartService.GetOfferCartByIdAsync(offerCartId);
                 _logger.LogInformation($"GetOfferCartById Success => OfferCartId: {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartById Success => OfferCartId: {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartById Success => OfferCartId: {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -393,7 +393,7 @@ namespace API.Controllers
             {
                 bool result = await _offerCartService.ApproveOfferByVisitorAsync(offerCartId);
                 _logger.LogInformation($"ApproveOfferByVisitor Success => OfferCartId: {offerCartId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"ApproveOfferByVisitor Success => OfferCartId: {offerCartId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"ApproveOfferByVisitor Success => OfferCartId: {offerCartId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -411,7 +411,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.FinalizationOfferCartsByUserIdAsync(appUserId);
                 _logger.LogInformation($"FinalizationOfferCartsByUserId Success => AppUserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"FinalizationOfferCartsByUserId Success => AppUserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"FinalizationOfferCartsByUserId Success => AppUserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -430,7 +430,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.ApprovedOfferCartsByUserIdAsync(appUserId);
                 _logger.LogInformation($"ApprovedOfferCartsByUserId Success => AppUserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"ApprovedOfferCartsByUserId Success => AppUserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"ApprovedOfferCartsByUserId Success => AppUserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -449,7 +449,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.SampleOfferCartsByUserIdAsync(appUserId);
                 _logger.LogInformation($"SampleOfferCartsByUserId Success => AppUserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"SampleOfferCartsByUserId Success => AppUserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"SampleOfferCartsByUserId Success => AppUserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -467,7 +467,7 @@ namespace API.Controllers
             {
                 IEnumerable<OfferCart> result = await _offerCartService.MoldOfferCartsByUserIdAsync(appUserId);
                 _logger.LogInformation($"MoldOfferCartsByUserId Success => AppUserId: {appUserId}");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"MoldOfferCartsByUserId Success => AppUserId: {appUserId}", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"MoldOfferCartsByUserId Success => AppUserId: {appUserId}", "-", null);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -485,7 +485,7 @@ namespace API.Controllers
             {
                 await _offerCartService.AddToCartAsync(cart);
                 _logger.LogInformation($"AddToOfferCart Success");
-                await _logService.AddLogAsync("Information", "OfferCartController", $"AddToOfferCart Success", "", null);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"AddToOfferCart Success", "-", null);
                 return Ok();
             }
             catch (Exception ex)

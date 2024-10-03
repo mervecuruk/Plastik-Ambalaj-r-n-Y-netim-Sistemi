@@ -26,6 +26,17 @@ namespace API
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // CORS politikasý ekleyelim
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigins", builder =>
+                {
+                    builder.WithOrigins("http://localhost:5272") // Frontend'in URL'sini buraya ekleyin
+                           .AllowAnyHeader()
+                           .AllowAnyMethod();
+                });
+            });
+
             // Add services to the container.
 
             builder.Services.AddControllers();
@@ -69,6 +80,8 @@ namespace API
 
             var app = builder.Build();
 
+            app.UseCors("AllowSpecificOrigins"); // CORS politikasýný kullan
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
@@ -85,6 +98,27 @@ namespace API
 
             app.Run();
         }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseCors("AllowSpecificOrigins"); // CORS politikasýný burada uyguluyoruz
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
+
+
 
     }
 }

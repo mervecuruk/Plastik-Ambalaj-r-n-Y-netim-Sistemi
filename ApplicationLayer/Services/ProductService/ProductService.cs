@@ -85,7 +85,7 @@ namespace ApplicationLayer.Services.ProductService
 
         public async Task<bool> GetActiveAsync(int id)
         {
-            if (id == 0 || await GetProductDetailsAsync(id) == null)
+            if (id == 0)
             {
                 return false;
             }
