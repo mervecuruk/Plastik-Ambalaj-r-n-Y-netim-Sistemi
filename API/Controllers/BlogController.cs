@@ -101,5 +101,22 @@ namespace API.Controllers
             }
 
         }
+
+        //resim yükleme metodu
+        [HttpPost]
+        public async Task<IActionResult> UpdateProductImage(BlogImageDTO blogImageDTO)
+        {
+            await _blogService.UploadProductImageAsync(blogImageDTO);
+            return Ok();
+        }
+
+
+        [HttpGet("{BlogId}")]
+        public async Task<IActionResult> FindBlog(int BlogId)
+        {
+            var result = await _blogService.FindBlog(BlogId);
+            if (!result) return NotFound();
+            return Ok(result);
+        }
     }
 }

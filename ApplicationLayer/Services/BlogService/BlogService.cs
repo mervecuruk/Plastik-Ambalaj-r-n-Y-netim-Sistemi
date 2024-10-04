@@ -77,5 +77,20 @@ namespace ApplicationLayer.Services.BlogService
             _mapper.Map(blog, oldBlog);
             await _blogRepository.UpdateAsync(oldBlog);
         }
+
+        //resim yükleme metodu
+        public async Task<bool> UploadProductImageAsync(BlogImageDTO blogImageDTO)
+        {
+            Blog oldBlog = await _blogRepository.FindAsync(blogImageDTO.BlogId);
+            oldBlog.ImageUrl = blogImageDTO.ImageUrl;
+            return await _blogRepository.UploadProductImageAsync(oldBlog);
+        }
+
+        public async Task<bool> FindBlog(int blogId)
+        {
+            Blog blog = await _blogRepository.FindAsync(blogId);
+            if (blog == null) return false;
+            return true;
+        }
     }
 }

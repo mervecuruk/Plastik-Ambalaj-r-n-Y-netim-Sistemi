@@ -4,6 +4,7 @@ using InfrastructureLayer.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InfrastructureLayer.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241003150252_firstDeneme")]
+    partial class firstDeneme
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,210 +57,210 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             CategoryId = 1,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2454),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3904),
                             CategoryName = "Food Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 2,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2467),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3915),
                             CategoryName = "Beverage Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 3,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2468),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3916),
                             CategoryName = "Cosmetic Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 4,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2470),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3917),
                             CategoryName = "Medical Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 5,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2471),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3918),
                             CategoryName = "Pharmaceutical Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 6,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2472),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3919),
                             CategoryName = "Flexible Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 7,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2473),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3920),
                             CategoryName = "Rigid Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 8,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2474),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3921),
                             CategoryName = "Plastic Bags",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 9,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2475),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3922),
                             CategoryName = "Shrink Wrap",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 10,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2476),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3923),
                             CategoryName = "Blister Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 11,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2477),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3924),
                             CategoryName = "Thermoformed Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 12,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2478),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3925),
                             CategoryName = "Vacuum Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 13,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2479),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3926),
                             CategoryName = "Stretch Film",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 14,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2480),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3927),
                             CategoryName = "Plastic Bottles",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 15,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2481),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3928),
                             CategoryName = "Plastic Containers",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 16,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2482),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3929),
                             CategoryName = "Plastic Caps and Closures",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 17,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2483),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3930),
                             CategoryName = "Disposable Utensils",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 18,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2484),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3931),
                             CategoryName = "Clamshell Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 19,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2485),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3932),
                             CategoryName = "Film Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 20,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2486),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3933),
                             CategoryName = "Injection Molded Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 21,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2487),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3934),
                             CategoryName = "PET Bottles",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 22,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2488),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3935),
                             CategoryName = "HDPE Containers",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 23,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2489),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3936),
                             CategoryName = "LDPE Bags",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 24,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2490),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3937),
                             CategoryName = "Polypropylene Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 25,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2491),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3938),
                             CategoryName = "Polystyrene Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 26,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2492),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3939),
                             CategoryName = "Polyvinyl Chloride (PVC) Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 27,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2493),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3940),
                             CategoryName = "Biodegradable Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 28,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2494),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3941),
                             CategoryName = "Compostable Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 29,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2495),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3942),
                             CategoryName = "E-commerce Packaging",
                             IsActive = true
                         },
                         new
                         {
                             CategoryId = 30,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(2496),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(3943),
                             CategoryName = "Industrial Packaging",
                             IsActive = true
                         });
@@ -296,28 +299,28 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "27a5b5bf-9763-46b5-98bc-a2655e000b88",
+                            ConcurrencyStamp = "64c5ef28-8902-430e-9a6c-d3a85c3f3a7d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "38b25183-ade9-4838-b198-3fe0dea82009",
+                            ConcurrencyStamp = "f53f445c-773a-4d17-add4-f079d74bb866",
                             Name = "ContentManager",
                             NormalizedName = "CONTENTMANAGER"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "53bbea35-143d-4a66-bddc-dc90fb827d21",
+                            ConcurrencyStamp = "1b4025fe-f7b4-4357-b9eb-f47e8d887670",
                             Name = "CustomerService",
                             NormalizedName = "CUSTOMERSERVICE"
                         },
                         new
                         {
                             Id = 4,
-                            ConcurrencyStamp = "a9329534-1737-4420-860c-5718b1ab6ce5",
+                            ConcurrencyStamp = "26924cf7-9597-4473-a9fd-8ace6ff96f42",
                             Name = "Visitor",
                             NormalizedName = "VISITOR"
                         });
@@ -419,8 +422,8 @@ namespace InfrastructureLayer.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 50, DateTimeKind.Local).AddTicks(4122),
-                            ConcurrencyStamp = "fdf45289-1a65-4432-a212-29a4f7f2fb81",
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 730, DateTimeKind.Local).AddTicks(2047),
+                            ConcurrencyStamp = "5347b8a4-69a8-4213-8b6b-e37e6d25f34b",
                             Email = "super@admin.com",
                             EmailConfirmed = false,
                             FirstName = "Super",
@@ -429,9 +432,9 @@ namespace InfrastructureLayer.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPER@ADMIN.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELE5cXEmADDxLHm7ouEk85Vj/52cTubT+IUt+IJf3l+8wOUG8KmgLaGfAf1IxvFzTw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHOivcbV/34+DBBwjBVfA5oSi4ECtJDf3my8R0bxh8aZFZw7bF/VfgNuDrq/eBlHfQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "329153f9-542e-4fb5-8cff-0ec9be1b8265",
+                            SecurityStamp = "0e1b9d66-e68e-4d6b-8912-894e4d956a72",
                             TwoFactorEnabled = false,
                             UserName = "Admin"
                         });
@@ -583,7 +586,7 @@ namespace InfrastructureLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrls")
+                    b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -618,10 +621,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 1,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4312),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5223),
                             CategoryId = 1,
                             Description = "Keep your food fresh.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -630,10 +632,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 2,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4319),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5229),
                             CategoryId = 1,
                             Description = "Microwave and dishwasher safe.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.20m,
@@ -642,10 +643,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 3,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4321),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5231),
                             CategoryId = 1,
                             Description = "Ideal for preserving food.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.15m,
@@ -654,10 +654,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 4,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4322),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5232),
                             CategoryId = 1,
                             Description = "Perfect for takeout.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 14,
                             Price = 0.75m,
@@ -666,10 +665,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 5,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4324),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5234),
                             CategoryId = 1,
                             Description = "Easy to use for packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 7,
                             Price = 3.50m,
@@ -678,10 +676,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 6,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4326),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5235),
                             CategoryId = 1,
                             Description = "For storing leftovers.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -690,10 +687,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 7,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4328),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5237),
                             CategoryId = 1,
                             Description = "For heating food safely.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -702,10 +698,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 8,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4329),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5238),
                             CategoryId = 1,
                             Description = "For quick meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.40m,
@@ -714,10 +709,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 9,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4331),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5240),
                             CategoryId = 1,
                             Description = "Eco-friendly option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 2.00m,
@@ -726,10 +720,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 10,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4333),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5242),
                             CategoryId = 1,
                             Description = "Great for organization.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.75m,
@@ -738,10 +731,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 11,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4335),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5243),
                             CategoryId = 2,
                             Description = "Perfect for beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.30m,
@@ -750,10 +742,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 12,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4337),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5245),
                             CategoryId = 2,
                             Description = "For soft drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 14,
                             Price = 0.50m,
@@ -762,10 +753,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 13,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4338),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5246),
                             CategoryId = 2,
                             Description = "Disposable and convenient.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.10m,
@@ -774,10 +764,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 14,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4340),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5248),
                             CategoryId = 2,
                             Description = "Reusable and recyclable.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 15,
                             Price = 1.00m,
@@ -786,10 +775,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 15,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4342),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5249),
                             CategoryId = 2,
                             Description = "For juice and smoothies.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -798,10 +786,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 16,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4343),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5251),
                             CategoryId = 2,
                             Description = "For long shelf life.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 8,
                             Price = 0.75m,
@@ -810,10 +797,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 17,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4345),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5253),
                             CategoryId = 2,
                             Description = "Eco-friendly choice.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 9,
                             Price = 1.50m,
@@ -822,10 +808,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 18,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4347),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5254),
                             CategoryId = 2,
                             Description = "Ideal for hot beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.60m,
@@ -834,10 +819,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 19,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4348),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5256),
                             CategoryId = 2,
                             Description = "Convenient for drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.05m,
@@ -846,10 +830,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 20,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4350),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5257),
                             CategoryId = 2,
                             Description = "For storing wine.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 15,
                             Price = 1.25m,
@@ -858,10 +841,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 21,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4352),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5259),
                             CategoryId = 3,
                             Description = "Ideal for creams.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -870,10 +852,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 22,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4353),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5261),
                             CategoryId = 3,
                             Description = "Stylish and durable.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 10,
                             Price = 2.00m,
@@ -882,10 +863,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 23,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4363),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5262),
                             CategoryId = 3,
                             Description = "Perfect for oils and perfumes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -894,10 +874,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 24,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4365),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5264),
                             CategoryId = 3,
                             Description = "For lip care products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.20m,
@@ -906,10 +885,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 25,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4366),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5265),
                             CategoryId = 3,
                             Description = "For perfumes and sprays.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -918,10 +896,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 26,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4368),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5267),
                             CategoryId = 3,
                             Description = "Ideal for skincare products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 15,
                             Price = 1.75m,
@@ -930,10 +907,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 27,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4370),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5268),
                             CategoryId = 3,
                             Description = "For organization.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 16,
                             Price = 0.90m,
@@ -942,10 +918,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 28,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4372),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5270),
                             CategoryId = 3,
                             Description = "For makeup products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.20m,
@@ -954,10 +929,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 29,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4373),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5271),
                             CategoryId = 3,
                             Description = "Ideal for facial masks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.50m,
@@ -966,10 +940,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 30,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4375),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5273),
                             CategoryId = 3,
                             Description = "Sustainable choices.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 2.50m,
@@ -978,10 +951,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 31,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4377),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5275),
                             CategoryId = 4,
                             Description = "For safe medicine storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.80m,
@@ -990,10 +962,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 32,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4379),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5276),
                             CategoryId = 4,
                             Description = "Sterile and secure.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 3.00m,
@@ -1002,10 +973,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 33,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4380),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5278),
                             CategoryId = 4,
                             Description = "For pharmaceutical storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 2.00m,
@@ -1014,10 +984,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 34,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4382),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5279),
                             CategoryId = 4,
                             Description = "For temperature-sensitive products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -1026,10 +995,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 35,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4384),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5291),
                             CategoryId = 4,
                             Description = "For intravenous therapy.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.40m,
@@ -1038,10 +1006,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 36,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4385),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5292),
                             CategoryId = 4,
                             Description = "For lab samples.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.30m,
@@ -1050,10 +1017,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 37,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4387),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5294),
                             CategoryId = 4,
                             Description = "For medication storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.60m,
@@ -1062,10 +1028,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 38,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4388),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5296),
                             CategoryId = 4,
                             Description = "Safe storage for syringes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -1074,10 +1039,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 39,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4390),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5297),
                             CategoryId = 4,
                             Description = "For identifying products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.10m,
@@ -1086,10 +1050,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 40,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4392),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5299),
                             CategoryId = 4,
                             Description = "For hazardous waste.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.20m,
@@ -1098,10 +1061,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 41,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4394),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5301),
                             CategoryId = 5,
                             Description = "For tablets and liquids.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -1110,10 +1072,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 42,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4395),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5302),
                             CategoryId = 5,
                             Description = "For safety.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.15m,
@@ -1122,10 +1083,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 43,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4397),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5304),
                             CategoryId = 5,
                             Description = "For medication management.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 2.00m,
@@ -1134,10 +1094,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 44,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4399),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5305),
                             CategoryId = 5,
                             Description = "For labeling products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 500.00m,
@@ -1146,10 +1105,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 45,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4400),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5307),
                             CategoryId = 5,
                             Description = "For syringes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -1158,10 +1116,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 46,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4402),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5309),
                             CategoryId = 5,
                             Description = "For pharmaceuticals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.60m,
@@ -1170,10 +1127,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 47,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4404),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5310),
                             CategoryId = 5,
                             Description = "For single-dose medications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -1182,10 +1138,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 48,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4405),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5312),
                             CategoryId = 5,
                             Description = "For intravenous medications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.40m,
@@ -1194,10 +1149,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 49,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4407),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5313),
                             CategoryId = 5,
                             Description = "For informing patients.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.10m,
@@ -1206,10 +1160,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 50,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4409),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5315),
                             CategoryId = 5,
                             Description = "For dispensing medications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.15m,
@@ -1218,10 +1171,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 51,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4410),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5317),
                             CategoryId = 6,
                             Description = "For various products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -1230,10 +1182,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 52,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4412),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5318),
                             CategoryId = 6,
                             Description = "Convenient for storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.75m,
@@ -1242,10 +1193,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 53,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4414),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5320),
                             CategoryId = 6,
                             Description = "For easy carrying.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.20m,
@@ -1254,10 +1204,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 54,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4415),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5321),
                             CategoryId = 6,
                             Description = "For tight packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.30m,
@@ -1266,10 +1215,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 55,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4417),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5323),
                             CategoryId = 6,
                             Description = "For preserving food.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -1278,10 +1226,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 56,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4419),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5325),
                             CategoryId = 6,
                             Description = "For custom packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -1290,10 +1237,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 57,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4420),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5326),
                             CategoryId = 6,
                             Description = "For snacks and meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.40m,
@@ -1302,10 +1248,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 58,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4422),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5328),
                             CategoryId = 6,
                             Description = "For bulk items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.60m,
@@ -1314,10 +1259,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 59,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4424),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5329),
                             CategoryId = 6,
                             Description = "For secure closure.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -1326,10 +1270,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 60,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4425),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5331),
                             CategoryId = 6,
                             Description = "For security.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.30m,
@@ -1338,10 +1281,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 61,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4427),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5333),
                             CategoryId = 7,
                             Description = "Durable and versatile.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -1350,10 +1292,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 62,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4429),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5334),
                             CategoryId = 7,
                             Description = "For various products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 15,
                             Price = 2.00m,
@@ -1362,10 +1303,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 63,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4430),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5336),
                             CategoryId = 7,
                             Description = "For food and beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 0.80m,
@@ -1374,10 +1314,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 64,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4432),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5337),
                             CategoryId = 7,
                             Description = "For bulk storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -1386,10 +1325,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 65,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4434),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5339),
                             CategoryId = 7,
                             Description = "For displaying products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.60m,
@@ -1398,10 +1336,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 66,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4436),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5340),
                             CategoryId = 7,
                             Description = "For transportation.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.50m,
@@ -1410,10 +1347,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 67,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4437),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5342),
                             CategoryId = 7,
                             Description = "For industrial use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 4.00m,
@@ -1422,10 +1358,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 68,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4439),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5344),
                             CategoryId = 7,
                             Description = "For organization.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.75m,
@@ -1434,10 +1369,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 69,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4441),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5345),
                             CategoryId = 7,
                             Description = "For temperature control.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 3.50m,
@@ -1446,10 +1380,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 70,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4446),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5347),
                             CategoryId = 7,
                             Description = "For industrial applications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 5.00m,
@@ -1458,10 +1391,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 71,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4448),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5348),
                             CategoryId = 8,
                             Description = "Lightweight and versatile.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.10m,
@@ -1470,10 +1402,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 72,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4450),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5350),
                             CategoryId = 8,
                             Description = "For shopping needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.05m,
@@ -1482,10 +1413,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 73,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4451),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5351),
                             CategoryId = 8,
                             Description = "Eco-friendly choice.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.15m,
@@ -1494,10 +1424,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 74,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4453),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5353),
                             CategoryId = 8,
                             Description = "Durable and strong.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.20m,
@@ -1506,10 +1435,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 75,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4455),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5355),
                             CategoryId = 8,
                             Description = "For sustainability.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 16,
                             Price = 1.00m,
@@ -1518,10 +1446,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 76,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4456),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5356),
                             CategoryId = 8,
                             Description = "For shipping purposes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.30m,
@@ -1530,10 +1457,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 77,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4458),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5358),
                             CategoryId = 8,
                             Description = "For lunch packing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.10m,
@@ -1542,10 +1468,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 78,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4460),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5359),
                             CategoryId = 8,
                             Description = "For secure storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.15m,
@@ -1554,10 +1479,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 79,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4461),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5361),
                             CategoryId = 8,
                             Description = "For retail purposes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.05m,
@@ -1566,10 +1490,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 80,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4463),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5362),
                             CategoryId = 8,
                             Description = "For fruits and vegetables.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.07m,
@@ -1578,10 +1501,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 81,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4465),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5364),
                             CategoryId = 9,
                             Description = "For secure packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -1590,10 +1512,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 82,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4466),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5366),
                             CategoryId = 9,
                             Description = "For tamper evidence.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.20m,
@@ -1602,10 +1523,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 83,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4468),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5367),
                             CategoryId = 9,
                             Description = "For efficient packing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 300.00m,
@@ -1614,10 +1534,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 84,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4470),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5369),
                             CategoryId = 9,
                             Description = "For custom sizes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.30m,
@@ -1626,10 +1545,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 85,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4472),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5370),
                             CategoryId = 9,
                             Description = "For high clarity packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.40m,
@@ -1638,10 +1556,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 86,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4473),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5372),
                             CategoryId = 9,
                             Description = "For large items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.70m,
@@ -1650,10 +1567,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 87,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4475),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5373),
                             CategoryId = 9,
                             Description = "For industrial use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -1662,10 +1578,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 88,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4477),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5375),
                             CategoryId = 9,
                             Description = "For smaller items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -1674,10 +1589,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 89,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4478),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5377),
                             CategoryId = 9,
                             Description = "For easy identification.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.15m,
@@ -1686,10 +1600,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 90,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4480),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5378),
                             CategoryId = 9,
                             Description = "For personalized packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -1698,10 +1611,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 91,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4482),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5380),
                             CategoryId = 10,
                             Description = "For product display.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.50m,
@@ -1710,10 +1622,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 92,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4483),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5388),
                             CategoryId = 10,
                             Description = "For retail items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.00m,
@@ -1722,10 +1633,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 93,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4485),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5389),
                             CategoryId = 10,
                             Description = "For efficient production.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 500.00m,
@@ -1734,10 +1644,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 94,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4487),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5391),
                             CategoryId = 10,
                             Description = "For personalized branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.80m,
@@ -1746,10 +1655,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 95,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4488),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5392),
                             CategoryId = 10,
                             Description = "For secure sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.60m,
@@ -1758,10 +1666,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 96,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4490),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5394),
                             CategoryId = 10,
                             Description = "For easy opening.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.20m,
@@ -1770,10 +1677,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 97,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4492),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5396),
                             CategoryId = 10,
                             Description = "For multiple items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.70m,
@@ -1782,10 +1688,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 98,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4493),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5397),
                             CategoryId = 10,
                             Description = "Sustainable packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.50m,
@@ -1794,10 +1699,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 99,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4495),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5399),
                             CategoryId = 10,
                             Description = "For added protection.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.40m,
@@ -1806,10 +1710,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 100,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4497),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5400),
                             CategoryId = 10,
                             Description = "For safe medication storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.90m,
@@ -1818,10 +1721,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 101,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4498),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5402),
                             CategoryId = 11,
                             Description = "For food and retail.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.70m,
@@ -1830,10 +1732,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 102,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4500),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5404),
                             CategoryId = 11,
                             Description = "For product display.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.80m,
@@ -1842,10 +1743,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 103,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4502),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5405),
                             CategoryId = 11,
                             Description = "For packaging small items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.60m,
@@ -1854,10 +1754,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 104,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4503),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5407),
                             CategoryId = 11,
                             Description = "For personalized products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -1866,10 +1765,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 105,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4505),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5408),
                             CategoryId = 11,
                             Description = "For production needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 400.00m,
@@ -1878,10 +1776,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 106,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4507),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5410),
                             CategoryId = 11,
                             Description = "Sustainable options.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.25m,
@@ -1890,10 +1787,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 107,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4508),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5411),
                             CategoryId = 11,
                             Description = "For food service.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -1902,10 +1798,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 108,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4510),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5413),
                             CategoryId = 11,
                             Description = "For secure sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.20m,
@@ -1914,10 +1809,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 109,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4512),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5415),
                             CategoryId = 11,
                             Description = "For easy opening.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.90m,
@@ -1926,10 +1820,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 110,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4513),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5416),
                             CategoryId = 11,
                             Description = "For meal prep.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -1938,10 +1831,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 111,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4515),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5418),
                             CategoryId = 12,
                             Description = "For food preservation.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -1950,10 +1842,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 112,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4517),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5419),
                             CategoryId = 12,
                             Description = "For easy sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 250.00m,
@@ -1962,10 +1853,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 113,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4518),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5421),
                             CategoryId = 12,
                             Description = "Custom sizes available.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -1974,10 +1864,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 114,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4520),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5422),
                             CategoryId = 12,
                             Description = "Eco-friendly option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.50m,
@@ -1986,10 +1875,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 115,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4522),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5424),
                             CategoryId = 12,
                             Description = "For long-term storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.20m,
@@ -1998,10 +1886,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 116,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4528),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5425),
                             CategoryId = 12,
                             Description = "For airtight storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 7,
                             Price = 2.50m,
@@ -2010,10 +1897,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 117,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4530),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5427),
                             CategoryId = 12,
                             Description = "For maintenance.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 15.00m,
@@ -2022,10 +1908,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 118,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4532),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5429),
                             CategoryId = 12,
                             Description = "For business use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.00m,
@@ -2034,10 +1919,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 119,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4533),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5430),
                             CategoryId = 12,
                             Description = "For liquids.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 7,
                             Price = 3.00m,
@@ -2046,10 +1930,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 120,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4535),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5432),
                             CategoryId = 12,
                             Description = "For convenient use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 10.00m,
@@ -2058,10 +1941,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 121,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4537),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5433),
                             CategoryId = 13,
                             Description = "For securing pallets.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -2070,10 +1952,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 122,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4538),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5435),
                             CategoryId = 13,
                             Description = "For manual use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.40m,
@@ -2082,10 +1963,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 123,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4540),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5436),
                             CategoryId = 13,
                             Description = "For automated packing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.60m,
@@ -2094,10 +1974,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 124,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4542),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5438),
                             CategoryId = 13,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.70m,
@@ -2106,10 +1985,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 125,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4543),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5440),
                             CategoryId = 13,
                             Description = "For heavy loads.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.90m,
@@ -2118,10 +1996,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 126,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4545),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5441),
                             CategoryId = 13,
                             Description = "For ease of use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -2130,10 +2007,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 127,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4547),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5443),
                             CategoryId = 13,
                             Description = "Sustainable option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.00m,
@@ -2142,10 +2018,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 128,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4548),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5444),
                             CategoryId = 13,
                             Description = "For easy handling.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 15.00m,
@@ -2154,10 +2029,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 129,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4550),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5446),
                             CategoryId = 13,
                             Description = "For securing multiple items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.65m,
@@ -2166,10 +2040,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 130,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4552),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5447),
                             CategoryId = 13,
                             Description = "For palletizing products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.75m,
@@ -2178,10 +2051,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 131,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4553),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5449),
                             CategoryId = 14,
                             Description = "Lightweight and recyclable.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.20m,
@@ -2190,10 +2062,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 132,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4555),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5451),
                             CategoryId = 14,
                             Description = "Durable and safe.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -2202,10 +2073,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 133,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4557),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5452),
                             CategoryId = 14,
                             Description = "For sauces and condiments.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.30m,
@@ -2214,10 +2084,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 134,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4558),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5454),
                             CategoryId = 14,
                             Description = "For lotions and liquids.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -2226,10 +2095,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 135,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4560),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5455),
                             CategoryId = 14,
                             Description = "Eco-friendly choice.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.35m,
@@ -2238,10 +2106,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 136,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4562),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5457),
                             CategoryId = 14,
                             Description = "For drinks and beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.15m,
@@ -2250,10 +2117,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 137,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4563),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5458),
                             CategoryId = 14,
                             Description = "For cooking oils.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.40m,
@@ -2262,10 +2128,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 138,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4565),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5460),
                             CategoryId = 14,
                             Description = "For fitness enthusiasts.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.60m,
@@ -2274,10 +2139,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 139,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4566),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5462),
                             CategoryId = 14,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.00m,
@@ -2286,10 +2150,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 140,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4568),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5463),
                             CategoryId = 14,
                             Description = "Personalized branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -2298,10 +2161,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 141,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4570),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5465),
                             CategoryId = 15,
                             Description = "For meal storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.70m,
@@ -2310,10 +2172,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 142,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4572),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5466),
                             CategoryId = 15,
                             Description = "For organization.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -2322,10 +2183,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 143,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4573),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5468),
                             CategoryId = 15,
                             Description = "For leftovers.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.90m,
@@ -2334,10 +2194,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 144,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4575),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5470),
                             CategoryId = 15,
                             Description = "For food service.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -2346,10 +2205,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 145,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4577),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5471),
                             CategoryId = 15,
                             Description = "For craft supplies.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.60m,
@@ -2358,10 +2216,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 146,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4578),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5473),
                             CategoryId = 15,
                             Description = "For transporting food and drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.50m,
@@ -2370,10 +2227,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 147,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4580),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5474),
                             CategoryId = 15,
                             Description = "For bulk items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.20m,
@@ -2382,10 +2238,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 148,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4582),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5476),
                             CategoryId = 15,
                             Description = "For snacks on the go.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -2394,10 +2249,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 149,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4583),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5485),
                             CategoryId = 15,
                             Description = "For outdoor meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -2406,10 +2260,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 150,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4585),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5487),
                             CategoryId = 15,
                             Description = "For efficient storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.00m,
@@ -2418,10 +2271,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 151,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4587),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5488),
                             CategoryId = 16,
                             Description = "For secure closure.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.05m,
@@ -2430,10 +2282,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 152,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4588),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5490),
                             CategoryId = 16,
                             Description = "For bottles and jars.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.10m,
@@ -2442,10 +2293,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 153,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4590),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5491),
                             CategoryId = 16,
                             Description = "For safety.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.12m,
@@ -2454,10 +2304,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 154,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4592),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5493),
                             CategoryId = 16,
                             Description = "For easy access.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.15m,
@@ -2466,10 +2315,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 155,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4593),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5495),
                             CategoryId = 16,
                             Description = "For convenience.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.08m,
@@ -2478,10 +2326,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 156,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4595),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5496),
                             CategoryId = 16,
                             Description = "For easy dispensing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.20m,
@@ -2490,10 +2337,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 157,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4597),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5498),
                             CategoryId = 16,
                             Description = "For various containers.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.18m,
@@ -2502,10 +2348,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 158,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4599),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5499),
                             CategoryId = 16,
                             Description = "For liquid products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.25m,
@@ -2514,10 +2359,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 159,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4600),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5501),
                             CategoryId = 16,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.30m,
@@ -2526,10 +2370,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 160,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4602),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5502),
                             CategoryId = 16,
                             Description = "For safety.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.35m,
@@ -2538,10 +2381,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 161,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4604),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5504),
                             CategoryId = 17,
                             Description = "For parties and events.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.02m,
@@ -2550,10 +2392,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 162,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4605),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5506),
                             CategoryId = 17,
                             Description = "For easy serving.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.02m,
@@ -2562,10 +2403,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 163,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4612),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5507),
                             CategoryId = 17,
                             Description = "For quick meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.02m,
@@ -2574,10 +2414,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 164,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4615),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5509),
                             CategoryId = 17,
                             Description = "For outdoor dining.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.05m,
@@ -2586,10 +2425,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 165,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4616),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5510),
                             CategoryId = 17,
                             Description = "For drinks and beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.05m,
@@ -2598,10 +2436,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 166,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4618),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5512),
                             CategoryId = 17,
                             Description = "Eco-friendly choice.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.10m,
@@ -2610,10 +2447,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 167,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4620),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5513),
                             CategoryId = 17,
                             Description = "For convenience.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.15m,
@@ -2622,10 +2458,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 168,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4622),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5515),
                             CategoryId = 17,
                             Description = "For serving food.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.10m,
@@ -2634,10 +2469,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 169,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4623),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5517),
                             CategoryId = 17,
                             Description = "For sustainable dining.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.12m,
@@ -2646,10 +2480,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 170,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4625),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5518),
                             CategoryId = 17,
                             Description = "For drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.03m,
@@ -2658,10 +2491,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 171,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4627),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5520),
                             CategoryId = 18,
                             Description = "For takeout and delivery.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.80m,
@@ -2670,10 +2502,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 172,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4628),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5521),
                             CategoryId = 18,
                             Description = "For product display.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.60m,
@@ -2682,10 +2513,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 173,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4630),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5523),
                             CategoryId = 18,
                             Description = "Sustainable option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.00m,
@@ -2694,10 +2524,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 174,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4632),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5525),
                             CategoryId = 18,
                             Description = "For retail products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.90m,
@@ -2706,10 +2535,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 175,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4633),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5526),
                             CategoryId = 18,
                             Description = "For visibility.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.70m,
@@ -2718,10 +2546,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 176,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4635),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5528),
                             CategoryId = 18,
                             Description = "For snacks and meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.75m,
@@ -2730,10 +2557,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 177,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4637),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5529),
                             CategoryId = 18,
                             Description = "For added protection.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.10m,
@@ -2742,10 +2568,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 178,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4638),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5531),
                             CategoryId = 18,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.50m,
@@ -2754,10 +2579,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 179,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4640),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5532),
                             CategoryId = 18,
                             Description = "For gadgets.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 2.00m,
@@ -2766,10 +2590,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 180,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4642),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5534),
                             CategoryId = 18,
                             Description = "For eco-friendly use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.25m,
@@ -2778,10 +2601,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 181,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4643),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5536),
                             CategoryId = 19,
                             Description = "For wrapping products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -2790,10 +2612,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 182,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4645),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5537),
                             CategoryId = 19,
                             Description = "For pallet wrapping.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.60m,
@@ -2802,10 +2623,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 183,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4647),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5539),
                             CategoryId = 19,
                             Description = "For tight packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.70m,
@@ -2814,10 +2634,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 184,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4648),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5540),
                             CategoryId = 19,
                             Description = "For moisture protection.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.80m,
@@ -2826,10 +2645,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 185,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4650),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5542),
                             CategoryId = 19,
                             Description = "For industrial use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -2838,10 +2656,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 186,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4652),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5543),
                             CategoryId = 19,
                             Description = "For clear packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.90m,
@@ -2850,10 +2667,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 187,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4654),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5545),
                             CategoryId = 19,
                             Description = "For sustainable packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.20m,
@@ -2862,10 +2678,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 188,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4655),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5547),
                             CategoryId = 19,
                             Description = "For food safety.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.75m,
@@ -2874,10 +2689,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 189,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4657),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5548),
                             CategoryId = 19,
                             Description = "For branding purposes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.85m,
@@ -2886,10 +2700,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 190,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4658),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5550),
                             CategoryId = 19,
                             Description = "For marketing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 1.50m,
@@ -2898,10 +2711,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 191,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4660),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5552),
                             CategoryId = 20,
                             Description = "For food and retail.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.00m,
@@ -2910,10 +2722,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 192,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4662),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5553),
                             CategoryId = 20,
                             Description = "For product display.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.80m,
@@ -2922,10 +2733,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 193,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4664),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5555),
                             CategoryId = 20,
                             Description = "For various applications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.50m,
@@ -2934,10 +2744,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 194,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4665),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5556),
                             CategoryId = 20,
                             Description = "For tailored solutions.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 2.00m,
@@ -2946,10 +2755,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 195,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4667),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5558),
                             CategoryId = 20,
                             Description = "For production needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 12,
                             Price = 600.00m,
@@ -2958,10 +2766,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 196,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4669),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5559),
                             CategoryId = 20,
                             Description = "For secure sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.30m,
@@ -2970,10 +2777,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 197,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4670),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5561),
                             CategoryId = 20,
                             Description = "For various containers.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.25m,
@@ -2982,10 +2788,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 198,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4672),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5563),
                             CategoryId = 20,
                             Description = "For secure packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.00m,
@@ -2994,10 +2799,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 199,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4674),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5564),
                             CategoryId = 20,
                             Description = "For bulk storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.20m,
@@ -3006,10 +2810,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 200,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4675),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5566),
                             CategoryId = 20,
                             Description = "For unique solutions.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 2.50m,
@@ -3018,10 +2821,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 201,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4677),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5567),
                             CategoryId = 21,
                             Description = "Ideal for beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.25m,
@@ -3030,10 +2832,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 202,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4679),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5569),
                             CategoryId = 21,
                             Description = "For juices and sauces.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.30m,
@@ -3042,10 +2843,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 203,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4680),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5571),
                             CategoryId = 21,
                             Description = "Includes secure cap.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.28m,
@@ -3054,10 +2854,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 204,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4682),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5572),
                             CategoryId = 21,
                             Description = "Environmentally friendly.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.26m,
@@ -3066,10 +2865,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 205,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4684),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5574),
                             CategoryId = 21,
                             Description = "For lotions and creams.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.35m,
@@ -3078,10 +2876,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 206,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4685),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5584),
                             CategoryId = 21,
                             Description = "Perfect for branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.40m,
@@ -3090,10 +2887,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 207,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4687),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5586),
                             CategoryId = 21,
                             Description = "For easy carrying.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.50m,
@@ -3102,10 +2898,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 208,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4689),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5588),
                             CategoryId = 21,
                             Description = "For wholesale orders.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.20m,
@@ -3114,10 +2909,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 209,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4696),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5589),
                             CategoryId = 21,
                             Description = "For athletes and fitness.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.45m,
@@ -3126,10 +2920,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 210,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4697),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5591),
                             CategoryId = 21,
                             Description = "For fresh juices.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 3,
                             Price = 0.32m,
@@ -3138,10 +2931,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 211,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4699),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5592),
                             CategoryId = 22,
                             Description = "For various storage needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -3150,10 +2942,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 212,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4701),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5594),
                             CategoryId = 22,
                             Description = "For safe storage of chemicals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -3162,10 +2953,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 213,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4703),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5595),
                             CategoryId = 22,
                             Description = "For paint and coatings.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.20m,
@@ -3174,10 +2964,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 214,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4704),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5597),
                             CategoryId = 22,
                             Description = "For large quantities.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.00m,
@@ -3186,10 +2975,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 215,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4706),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5599),
                             CategoryId = 22,
                             Description = "For liquids and powders.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.90m,
@@ -3198,10 +2986,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 216,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4708),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5600),
                             CategoryId = 22,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -3210,10 +2997,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 217,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4709),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5602),
                             CategoryId = 22,
                             Description = "For various uses.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -3222,10 +3008,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 218,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4711),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5603),
                             CategoryId = 22,
                             Description = "For safe transport.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.50m,
@@ -3234,10 +3019,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 219,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4713),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5605),
                             CategoryId = 22,
                             Description = "Eco-friendly option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.10m,
@@ -3246,10 +3030,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 220,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4714),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5606),
                             CategoryId = 22,
                             Description = "Tailored to your needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 2.00m,
@@ -3258,10 +3041,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 221,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4716),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5608),
                             CategoryId = 23,
                             Description = "For shopping needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.05m,
@@ -3270,10 +3052,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 222,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4718),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5609),
                             CategoryId = 23,
                             Description = "For waste disposal.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.10m,
@@ -3282,10 +3063,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 223,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4719),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5611),
                             CategoryId = 23,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.15m,
@@ -3294,10 +3074,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 224,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4721),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5612),
                             CategoryId = 23,
                             Description = "For lunch packing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.08m,
@@ -3306,10 +3085,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 225,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4723),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5614),
                             CategoryId = 23,
                             Description = "For large items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.25m,
@@ -3318,10 +3096,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 226,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4724),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5616),
                             CategoryId = 23,
                             Description = "Eco-friendly option.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.20m,
@@ -3330,10 +3107,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 227,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4728),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5617),
                             CategoryId = 23,
                             Description = "For moisture protection.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.30m,
@@ -3342,10 +3118,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 228,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4730),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5619),
                             CategoryId = 23,
                             Description = "For shipping products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.12m,
@@ -3354,10 +3129,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 229,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4732),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5621),
                             CategoryId = 23,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.18m,
@@ -3366,10 +3140,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 230,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4733),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5622),
                             CategoryId = 23,
                             Description = "For various uses.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 13,
                             Price = 0.22m,
@@ -3378,10 +3151,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 231,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4737),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5624),
                             CategoryId = 24,
                             Description = "Durable and lightweight.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.20m,
@@ -3390,10 +3162,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 232,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4739),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5625),
                             CategoryId = 24,
                             Description = "For food and retail.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 1.00m,
@@ -3402,10 +3173,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 233,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4742),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5627),
                             CategoryId = 24,
                             Description = "For packaging needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.50m,
@@ -3414,10 +3184,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 234,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4745),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5628),
                             CategoryId = 24,
                             Description = "For product display.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.80m,
@@ -3426,10 +3195,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 235,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4748),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5630),
                             CategoryId = 24,
                             Description = "For securing packages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.30m,
@@ -3438,10 +3206,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 236,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4750),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5631),
                             CategoryId = 24,
                             Description = "For drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.12m,
@@ -3450,10 +3217,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 237,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4751),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5633),
                             CategoryId = 24,
                             Description = "For easy sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.25m,
@@ -3462,10 +3228,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 238,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4753),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5635),
                             CategoryId = 24,
                             Description = "Tailored to your needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.40m,
@@ -3474,10 +3239,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 239,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4755),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5636),
                             CategoryId = 24,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.18m,
@@ -3486,10 +3250,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 240,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4756),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5638),
                             CategoryId = 24,
                             Description = "For product information.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.10m,
@@ -3498,10 +3261,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 241,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4758),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5639),
                             CategoryId = 25,
                             Description = "For hot food.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.30m,
@@ -3510,10 +3272,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 242,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4760),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5641),
                             CategoryId = 25,
                             Description = "For beverages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.15m,
@@ -3522,10 +3283,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 243,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4761),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5643),
                             CategoryId = 25,
                             Description = "For display and packaging.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.20m,
@@ -3534,10 +3294,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 244,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4763),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5644),
                             CategoryId = 25,
                             Description = "For food and products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.25m,
@@ -3546,10 +3305,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 245,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4765),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5646),
                             CategoryId = 25,
                             Description = "Eco-friendly choice.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.35m,
@@ -3558,10 +3316,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 246,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4766),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5648),
                             CategoryId = 25,
                             Description = "For takeout meals.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.40m,
@@ -3570,10 +3327,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 247,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4768),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5649),
                             CategoryId = 25,
                             Description = "For deli foods.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.50m,
@@ -3582,10 +3338,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 248,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4770),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5651),
                             CategoryId = 25,
                             Description = "For sandwiches.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.30m,
@@ -3594,10 +3349,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 249,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4771),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5652),
                             CategoryId = 25,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.45m,
@@ -3606,10 +3360,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 250,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4773),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5654),
                             CategoryId = 25,
                             Description = "For various containers.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 4,
                             Price = 0.20m,
@@ -3618,10 +3371,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 251,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4775),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5655),
                             CategoryId = 26,
                             Description = "For tight sealing.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.30m,
@@ -3630,10 +3382,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 252,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4776),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5657),
                             CategoryId = 26,
                             Description = "For product visibility.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.50m,
@@ -3642,10 +3393,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 253,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4778),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5659),
                             CategoryId = 26,
                             Description = "For plumbing needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 2.00m,
@@ -3654,10 +3404,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 254,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4780),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5660),
                             CategoryId = 26,
                             Description = "For various applications.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.50m,
@@ -3666,10 +3415,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 255,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4781),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5662),
                             CategoryId = 26,
                             Description = "Tailored for your needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.00m,
@@ -3678,10 +3426,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 256,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4789),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5664),
                             CategoryId = 26,
                             Description = "For labeling.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.25m,
@@ -3690,10 +3437,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 257,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4791),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5665),
                             CategoryId = 26,
                             Description = "For sealing packages.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.15m,
@@ -3702,10 +3448,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 258,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4793),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5667),
                             CategoryId = 26,
                             Description = "For safeguarding items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.40m,
@@ -3714,10 +3459,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 259,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4794),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5668),
                             CategoryId = 26,
                             Description = "For outdoor use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 1.80m,
@@ -3726,10 +3470,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 260,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4796),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5670),
                             CategoryId = 26,
                             Description = "For product information.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 5,
                             Price = 0.10m,
@@ -3738,10 +3481,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 261,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4798),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5671),
                             CategoryId = 27,
                             Description = "For eco-friendly use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.10m,
@@ -3750,10 +3492,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 262,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4799),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5673),
                             CategoryId = 27,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.50m,
@@ -3762,10 +3503,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 263,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4801),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5680),
                             CategoryId = 27,
                             Description = "For sustainable dining.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.12m,
@@ -3774,10 +3514,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 264,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4803),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5682),
                             CategoryId = 27,
                             Description = "For wrapping products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.75m,
@@ -3786,10 +3525,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 265,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4804),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5683),
                             CategoryId = 27,
                             Description = "For waste disposal.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.15m,
@@ -3798,10 +3536,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 266,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4806),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5685),
                             CategoryId = 27,
                             Description = "For food and more.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.50m,
@@ -3810,10 +3547,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 267,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4808),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5686),
                             CategoryId = 27,
                             Description = "For drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.08m,
@@ -3822,10 +3558,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 268,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4809),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5688),
                             CategoryId = 27,
                             Description = "For dining needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.10m,
@@ -3834,10 +3569,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 269,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4811),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5689),
                             CategoryId = 27,
                             Description = "For fresh food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.20m,
@@ -3846,10 +3580,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 270,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4813),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5691),
                             CategoryId = 27,
                             Description = "For branding.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.30m,
@@ -3858,10 +3591,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 271,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4815),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5693),
                             CategoryId = 28,
                             Description = "Eco-friendly for waste.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.15m,
@@ -3870,10 +3602,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 272,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4816),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5694),
                             CategoryId = 28,
                             Description = "For dining needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.25m,
@@ -3882,10 +3613,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 273,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4818),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5696),
                             CategoryId = 28,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.50m,
@@ -3894,10 +3624,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 274,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4819),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5697),
                             CategoryId = 28,
                             Description = "For dining use.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.12m,
@@ -3906,10 +3635,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 275,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4821),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5699),
                             CategoryId = 28,
                             Description = "For drinks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.10m,
@@ -3918,10 +3646,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 276,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4823),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5701),
                             CategoryId = 28,
                             Description = "For wrapping products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.20m,
@@ -3930,10 +3657,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 277,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4824),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5702),
                             CategoryId = 28,
                             Description = "For branding needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.30m,
@@ -3942,10 +3668,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 278,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4826),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5704),
                             CategoryId = 28,
                             Description = "For snacks.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.15m,
@@ -3954,10 +3679,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 279,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4828),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5705),
                             CategoryId = 28,
                             Description = "For food storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.20m,
@@ -3966,10 +3690,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 280,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4829),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5707),
                             CategoryId = 28,
                             Description = "For catering.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 6,
                             Price = 0.25m,
@@ -3978,10 +3701,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 281,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4831),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5708),
                             CategoryId = 29,
                             Description = "For safe delivery.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 1.00m,
@@ -3990,10 +3712,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 282,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4833),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5710),
                             CategoryId = 29,
                             Description = "For fragile items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.80m,
@@ -4002,10 +3723,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 283,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4834),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5712),
                             CategoryId = 29,
                             Description = "For sealing boxes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.10m,
@@ -4014,10 +3734,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 284,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4836),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5713),
                             CategoryId = 29,
                             Description = "For cushioning items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.20m,
@@ -4026,10 +3745,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 285,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4838),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5715),
                             CategoryId = 29,
                             Description = "For shipping information.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.05m,
@@ -4038,10 +3756,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 286,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4840),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5716),
                             CategoryId = 29,
                             Description = "For branding needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 1.20m,
@@ -4050,10 +3767,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 287,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4841),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5718),
                             CategoryId = 29,
                             Description = "For order details.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.03m,
@@ -4062,10 +3778,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 288,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4843),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5719),
                             CategoryId = 29,
                             Description = "For posters and art.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.15m,
@@ -4074,10 +3789,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 289,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4844),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5721),
                             CategoryId = 29,
                             Description = "For fragile items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.25m,
@@ -4086,10 +3800,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 290,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4846),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5722),
                             CategoryId = 29,
                             Description = "For special occasions.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.30m,
@@ -4098,10 +3811,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 291,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4848),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5724),
                             CategoryId = 30,
                             Description = "For securing large items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.50m,
@@ -4110,10 +3822,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 292,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4849),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5726),
                             CategoryId = 30,
                             Description = "For bundling products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.00m,
@@ -4122,10 +3833,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 293,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4851),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5727),
                             CategoryId = 30,
                             Description = "For securing loads.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 2,
                             Price = 0.30m,
@@ -4134,10 +3844,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 294,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4853),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5729),
                             CategoryId = 30,
                             Description = "For bulk storage.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.50m,
@@ -4146,10 +3855,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 295,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4854),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5730),
                             CategoryId = 30,
                             Description = "For heavy-duty shipping.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 1.20m,
@@ -4158,10 +3866,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 296,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4856),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5732),
                             CategoryId = 30,
                             Description = "For sealing boxes.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 11,
                             Price = 0.15m,
@@ -4170,10 +3877,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 297,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4858),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5733),
                             CategoryId = 30,
                             Description = "For protecting products.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.40m,
@@ -4182,10 +3888,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 298,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4859),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5735),
                             CategoryId = 30,
                             Description = "For bulk materials.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.25m,
@@ -4194,10 +3899,9 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 299,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4861),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5737),
                             CategoryId = 30,
                             Description = "For cushioning fragile items.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 0.75m,
@@ -4206,51 +3910,14 @@ namespace InfrastructureLayer.Migrations
                         new
                         {
                             ProductId = 300,
-                            AddedDate = new DateTime(2024, 10, 4, 0, 36, 46, 120, DateTimeKind.Local).AddTicks(4863),
+                            AddedDate = new DateTime(2024, 10, 3, 18, 2, 51, 801, DateTimeKind.Local).AddTicks(5738),
                             CategoryId = 30,
                             Description = "Tailored for specific needs.",
-                            ImageUrls = "[]",
                             IsActive = true,
                             Material = 1,
                             Price = 1.80m,
                             ProductName = "Custom Industrial Packaging"
                         });
-                });
-
-            modelBuilder.Entity("DomainLayer.Entities.Concrete.Sss", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("AddedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("AdminAccept")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("AskTitle")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("DeleteDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sss");
                 });
 
             modelBuilder.Entity("DomainLayer.OfferCartMessage", b =>

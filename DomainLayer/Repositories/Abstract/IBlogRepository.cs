@@ -9,6 +9,6 @@ namespace DomainLayer.Repositories.Abstract
 {
     public interface IBlogRepository : IBaseRepository<Blog>
     {
-
+        Task<bool> UploadProductImageAsync(Blog blog);
     }
 }

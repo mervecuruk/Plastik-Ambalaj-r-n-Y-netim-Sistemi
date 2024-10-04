@@ -43,8 +43,16 @@ namespace ApplicationLayer.Services.OfferCartService
 
         // İADE İŞLEMLERİ
         Task<bool> OfferCardRefundRequestAsync(int offerCartId);
+        Task<bool> OfferCardRefundRequestDeclineVSAsync(int offerCartId);
         Task<bool> OfferCardRefundRequestAcceptAsync(int offerCartId);
-        Task<IEnumerable<OfferCart>> RefundRequestOfferCardsAsync();
+        Task<bool> OfferCardRefundRequestAcceptCSAsync(int offerCartId);
+        Task<bool> OfferCardRefundRequestDeclineCSAsync(int offerCartId);
+        Task<bool> OfferCardRefundRequestDeclineAsync(int offerCartId);
+        Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByAdminAsync();
+        Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByCustomerServiceAsync();
+        Task<IEnumerable<OfferCart>> RefundRequestAllAcceptAsync();
+        Task<IEnumerable<OfferCart>> AllWaitingRefundRequestByUserId(int userId);
+        Task<IEnumerable<OfferCart>> AllCompletedRefundRequestByUserId(int userId);
 
     }
 }

@@ -6,6 +6,7 @@ using ApplicationLayer.Services.OfferCartMessageService;
 using ApplicationLayer.Services.OfferCartService;
 using ApplicationLayer.Services.ProductService;
 using ApplicationLayer.Services.RoleService;
+using ApplicationLayer.Services.SssService;
 using ApplicationLayer.Services.UserService;
 using DomainLayer.Entities.Concrete;
 using DomainLayer.Repositories.Abstract;
@@ -60,6 +61,7 @@ namespace API
             builder.Services.AddScoped<IOfferCartMessageRepository, OfferCartMessageRepository>();
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
             builder.Services.AddScoped<ILogRepository, LogRepository>();
+            builder.Services.AddScoped<ISssRepository, SssRepository>();
 
 
             builder.Services.AddScoped<IUserService, UserService>();
@@ -70,6 +72,7 @@ namespace API
             builder.Services.AddScoped<IOfferCartMessageService, OfferCartMessageService>();
             builder.Services.AddScoped<IBlogService, BlogService>();
             builder.Services.AddScoped<ILogService, LogService>();
+            builder.Services.AddScoped<ISssService, SssService>();
 
             //ILogger
             builder.Services.AddLogging();

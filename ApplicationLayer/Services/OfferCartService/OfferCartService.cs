@@ -48,6 +48,28 @@ namespace ApplicationLayer.Services.OfferCartService
         }
 
         /// <summary>
+        /// Parametredeki User ID'ye ait olan tüm Onaylanmış RefundRequestleri döndürür
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> AllCompletedRefundRequestByUserId(int userId)
+        {
+            return await _offerCartRepository.AllCompletedRefundRequestByUserId(userId);
+        }
+
+        /// <summary>
+        /// Parametredki User ID'ye ait olan tüm Onay bekleyen RefundRequestleri döndürür
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> AllWaitingRefundRequestByUserId(int userId)
+        {
+            return await _offerCartRepository.AllWaitingRefundRequestByUserId(userId);
+        }
+
+        /// <summary>
         /// Approved olan OfferCartları döner AppUserId parametre ver
         /// </summary>
         /// <param name="appUserId"></param>
@@ -216,32 +238,96 @@ namespace ApplicationLayer.Services.OfferCartService
         /// </summary>
         /// <param name="offerCartId"></param>
         /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public async Task<bool> OfferCardRefundRequestAcceptAsync(int offerCartId)
         {
             return await _offerCartRepository.OfferCardRefundRequestAcceptAsync(offerCartId);
         }
 
         /// <summary>
-        /// Parametredeki OfferCartId' ye ait OfferCart iadesi başlatır
+        /// İade işlemini CUSTOMER SERVICE'in onaylama işlemini yapar
         /// </summary>
         /// <param name="offerCartId"></param>
         /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestAcceptCSAsync(int offerCartId)
+        {
+            return await _offerCartRepository.OfferCardRefundRequestAcceptCSAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesi başlatır VISITOR
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
         public async Task<bool> OfferCardRefundRequestAsync(int offerCartId)
         {
             return await _offerCartRepository.OfferCardRefundRequestAsync(offerCartId);
         }
 
+        /// <summary>
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesini iptal eder (Admin)
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestDeclineAsync(int offerCartId)
+        {
+            return await _offerCartRepository.OfferCardRefundRequestDeclineAsync(offerCartId);
+        }
 
         /// <summary>
-        /// İade edilmek istenen OfferCartları döner (Admin onaylaması için / Admin kullansın)
+        /// İade işlemini Customer Service'in iptal etme işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestDeclineCSAsync(int offerCartId)
+        {
+            return await _offerCartRepository.OfferCardRefundRequestDeclineCSAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// İade işlemini VISITOR için iptal etme işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestDeclineVSAsync(int offerCartId)
+        {
+            return await _offerCartRepository.OfferCardRefundRequestDeclineVSAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// İade işlemleri tamamlananların listesini döner
         /// </summary>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsAsync()
+        public async Task<IEnumerable<OfferCart>> RefundRequestAllAcceptAsync()
         {
-            return await _offerCartRepository.RefundRequestOfferCardsAsync();
+            return await _offerCartRepository.RefundRequestAllAcceptAsync();
         }
 
+        /// <summary>
+        /// İade edilmek istenen OfferCartları döner (Admin için CustomerService onayladıklarını dönmeli)
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByAdminAsync()
+        {
+            return await _offerCartRepository.RefundRequestOfferCardsByAdminAsync();
+        }
+
+        /// <summary>
+        /// İade edilmek istenen OfferCartları döner (Customer Service Önüne gelecek liste)
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByCustomerServiceAsync()
+        {
+            return await _offerCartRepository.RefundRequestOfferCardsByCustomerServiceAsync();
+        }
 
         /// <summary>
         /// UserId ye OfferCart içerisindeki tüm Productları sil 

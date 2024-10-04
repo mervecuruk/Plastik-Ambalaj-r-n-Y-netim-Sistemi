@@ -15,7 +15,8 @@ namespace DomainLayer.Entities.Concrete
         public int Amount { get; set; }
         public string Address { get; set; }
         public decimal TotalPrice { get; set; }
-        public bool IsRefundRequest { get; set; } = false; // iade talebi
+        public bool IsRefundRequest { get; set; } = false; // iade talebi (visitor)
+        public bool RefundCustomerService { get; set; } = false; // iade işlemi onayı (Customer Service)
         public bool AcceptRefundRequest { get; set; } = false; // iade işlemi onayı (Admin)
         public DateTime? CompletedDate { get; set; }
 

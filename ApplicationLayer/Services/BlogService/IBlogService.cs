@@ -18,5 +18,7 @@ namespace ApplicationLayer.Services.BlogService
         Task<BlogDetailsDTO> GetBlogDetailsAsync(int blogId);
         Task UpdateBlogAsync(UpdateBlogDTO product);
         Task<List<Blog>> GetBlogByKeywordAsync(string keyword);
+        Task<bool> UploadProductImageAsync(BlogImageDTO blogImageDTO);
+        Task<bool> FindBlog(int blogId);
     }
 }

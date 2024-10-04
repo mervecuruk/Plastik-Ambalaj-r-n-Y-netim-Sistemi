@@ -19,17 +19,37 @@ namespace InfrastructureLayer.Repositories.Concrete
         }
 
         //Product için resim yükleme metodu
+
         public async Task<bool> UploadProductImageAsync(Product product)
         {
             var productOld = await _context.Products.FindAsync(product.ProductId);
             if (product == null) return false;
 
-            productOld.ImageUrl = product.ImageUrl;
+            // Mevcut resim URL'lerini güncelle
+            foreach (var imageUrl in product.ImageUrls)
+            {
+                if (!product.ImageUrls.Contains(imageUrl)) // Duplicates'i önlemek için kontrol
+                {
+                    product.ImageUrls.Add(imageUrl); // Yeni resmi ekle
+                }
+            }
             productOld.UpdateDate = DateTime.Now;
             _context.Products.Update(productOld);
             await _context.SaveChangesAsync();
             return true;
         }
+
+        //public async Task<bool> UploadProductImageAsync(Product product)
+        //{
+        //    var productOld = await _context.Products.FindAsync(product.ProductId);
+        //    if (product == null) return false;
+
+        //    productOld.ImageUrl = product.ImageUrl;
+        //    productOld.UpdateDate = DateTime.Now;
+        //    _context.Products.Update(productOld);
+        //    await _context.SaveChangesAsync();
+        //    return true;
+        //}
 
 
         //sadece ürünü bulma

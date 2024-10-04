@@ -343,7 +343,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         }
 
         /// <summary>
-        /// Parametredeki OfferCartId' ye ait OfferCart iadesi başlatır
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesi başlatır VISITOR
         /// </summary>
         /// <param name="offerCartId"></param>
         /// <returns></returns>
@@ -377,17 +377,138 @@ namespace InfrastructureLayer.Repositories.Concrete
         }
 
         /// <summary>
-        /// İade edilmek istenen OfferCartları döner (Admin onaylaması için / Admin kullansın)
+        /// Parametredeki OfferCartId' ye ait OfferCart iadesini iptal eder (Admin)
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> OfferCardRefundRequestDeclineAsync(int offerCartId)
+        {
+            OfferCart resultOfferCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (resultOfferCart == null) return false;
+            else
+            {
+                resultOfferCart.AcceptRefundRequest = false;
+                _context.OfferCarts.Update(resultOfferCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// İade edilmek istenen OfferCartları döner (Admin için CustomerService onayladıklarını dönmeli)
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsAsync()
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByAdminAsync()
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+        /// <summary>
+        /// İade edilmek istenen OfferCartları döner (Customer Service Önüne gelecek liste)
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByCustomerServiceAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false).ToListAsync();
             if (result == null) return null;
             else
             {
                 return result;
             }
+        }
+
+        /// <summary>
+        /// İade işlemini CUSTOMER SERVICE'in onaylama işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestAcceptCSAsync(int offerCartId)
+        {
+            OfferCart offerCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (offerCart == null) return false;
+            else
+            {
+                offerCart.RefundCustomerService = true;
+                _context.OfferCarts.Update(offerCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// İade işlemini Customer Service'in iptal etme işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestDeclineCSAsync(int offerCartId)
+        {
+            OfferCart offerCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (offerCart == null) return false;
+            else
+            {
+                offerCart.RefundCustomerService = false;
+                _context.OfferCarts.Update(offerCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// İade işlemini VISITOR için iptal etme işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<bool> OfferCardRefundRequestDeclineVSAsync(int offerCartId)
+        {
+            OfferCart offerCart = await _context.OfferCarts.FindAsync(offerCartId);
+            if (offerCart == null) return false;
+            else
+            {
+                offerCart.IsRefundRequest = false;
+                _context.OfferCarts.Update(offerCart);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// İade işlemleri tamamlananların listesini döner
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> RefundRequestAllAcceptAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+        /// <summary>
+        /// Parametredeki User ID'ye ait olan tüm Onaylanmış RefundRequestleri döndürür
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> AllCompletedRefundRequestByUserId(int userId)
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+        /// <summary>
+        /// Parametredki User ID'ye ait olan tüm Onay bekleyen RefundRequestleri döndürür
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public async Task<IEnumerable<OfferCart>> AllWaitingRefundRequestByUserId(int userId)
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false && x.AcceptRefundRequest == false).ToListAsync();
+            if (result == null) return null;
+            else return result;
         }
 
     }

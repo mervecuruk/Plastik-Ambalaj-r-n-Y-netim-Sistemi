@@ -21,7 +21,7 @@ namespace InfrastructureLayer.Contexts
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Server=DESKTOP-LGLV727\\SQLEXPRESS;Database=PlastikDBLogger;Trusted_Connection=True;Integrated Security=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-LGLV727\\SQLEXPRESS;Database=PlastikDBLogger2;Trusted_Connection=True;Integrated Security=True;Encrypt=False;");
         }
     }
 }

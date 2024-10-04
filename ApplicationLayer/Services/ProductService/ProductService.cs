@@ -58,9 +58,13 @@ namespace ApplicationLayer.Services.ProductService
 
         public async Task<ProductDetailsDTO> GetProductDetailsAsync(int productId)
         {
-            var product = await _productRepository.GetAllInclude().Include(x => x.Category).Where(x => x.ProductId == productId).SingleOrDefaultAsync();
+            var product = await _productRepository.GetAllInclude().Include(x => x.Category).Where(x => x.ProductId == productId).FirstOrDefaultAsync();
             ProductDetailsDTO productDetailsDTO = new ProductDetailsDTO();
             _mapper.Map(product, productDetailsDTO);
+            productDetailsDTO.MaterialId = (int)product.Material;
+            productDetailsDTO.CategoryId = product.CategoryId;
+            productDetailsDTO.CategoryName = product.Category.CategoryName;
+            productDetailsDTO.MaterialName = product.Material.ToString();
             return productDetailsDTO;
         }
 
@@ -95,13 +99,27 @@ namespace ApplicationLayer.Services.ProductService
             }
         }
 
-        //Resim yükleme metodu
         public async Task<bool> UploadProductImageAsync(UploadImageDTO uploadImageDTO)
         {
             Product oldProduct = await _productRepository.FindAsync(uploadImageDTO.ProductId);
-            oldProduct.ImageUrl = uploadImageDTO.ImageUrl;
+            // Mevcut resim URL'lerini güncelle
+            foreach (var imageUrl in uploadImageDTO.ImageUrls)
+            {
+                if (!oldProduct.ImageUrls.Contains(imageUrl)) // Duplicates'i önlemek için kontrol
+                {
+                    oldProduct.ImageUrls.Add(imageUrl); // Yeni resmi ekle
+                }
+            }
             return await _productRepository.UploadProductImageAsync(oldProduct);
         }
+
+        //Resim yükleme metodu
+        //public async Task<bool> UploadProductImageAsync(UploadImageDTO uploadImageDTO)
+        //{
+        //    Product oldProduct = await _productRepository.FindAsync(uploadImageDTO.ProductId);
+        //    oldProduct.ImageUrl = uploadImageDTO.ImageUrl;
+        //    return await _productRepository.UploadProductImageAsync(oldProduct);
+        //}
 
         public async Task<bool> FindProduct(int ProductId)
         {

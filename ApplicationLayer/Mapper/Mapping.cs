@@ -3,6 +3,7 @@ using ApplicationLayer.Models.DTOs.CategoryDTOs;
 using ApplicationLayer.Models.DTOs.OfferCartDTOs;
 using ApplicationLayer.Models.DTOs.OfferCartMessageDTOs;
 using ApplicationLayer.Models.DTOs.ProductDTOs;
+using ApplicationLayer.Models.DTOs.SssDTOs;
 using AutoMapper;
 using DomainLayer;
 using DomainLayer.Entities.Concrete;
@@ -29,6 +30,7 @@ namespace ApplicationLayer.Mapper
             CreateMap<Category, GetAllProductsOfCategoryDTO>().ReverseMap();
 
             CreateMap<OfferCart, AddOfferCartDTO>().ReverseMap();
+            CreateMap<OfferCart, UpdateOfferCartDTO>().ReverseMap();
 
             CreateMap<OfferCartMessage, AddOfferCartMessageDTO>().ReverseMap();
 
@@ -36,6 +38,8 @@ namespace ApplicationLayer.Mapper
             CreateMap<Blog, BlogDTO>().ReverseMap();
             CreateMap<Blog, BlogDetailsDTO>().ReverseMap();
             CreateMap<Blog, UpdateBlogDTO>().ReverseMap();
+
+            CreateMap<Sss, SssUpdatedDTO>().ReverseMap();
         }
     }
 }
