@@ -614,5 +614,197 @@ namespace API.Controllers
                 return BadRequest("Error");
             }
         }
+
+
+        //YENİ EKLENEN
+        //YENİ EKLENEN
+        //YENİ EKLENEN
+        //YENİ EKLENEN
+
+        [HttpGet]
+        public async Task<IActionResult> CSApprovedOfferCarts()
+        {
+            try
+            {
+                IEnumerable<OfferCart> offerCarts = await _offerCartService.CustomerServiceApprovedOfferCartsAsync();
+                if (offerCarts != null)
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"CSApprovedOfferCarts Success", "-", null);
+                    return Ok(offerCarts);
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"CSApprovedOfferCarts Error", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CSWaitingOfferCarts()
+        {
+            try
+            {
+                IEnumerable<OfferCart> offerCarts = await _offerCartService.CustomerServiceWaitingOfferCartsAsync();
+                if (offerCarts != null)
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"CSWaitingOfferCarts Success", "-", null);
+                    return Ok(offerCarts);
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"CSWaitingOfferCarts Error", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{offerCartId}")]
+        public async Task<IActionResult> CSAcceptOfferCart(int offerCartId)
+        {
+            try
+            {
+                await _offerCartService.CustomerServiceAcceptOfferCartAsync(offerCartId);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"CSAcceptOfferCart Success => OfferCart ID: {offerCartId}", "-", null);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"CSAcceptOfferCart Error => OfferCart ID: {offerCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{offerCartId}")]
+        public async Task<IActionResult> CSDeclineOfferCart(int offerCartId)
+        {
+            try
+            {
+                await _offerCartService.CustomerServiceDeclineOfferCartAsync(offerCartId);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"CSDeclineOfferCart Success => OfferCart ID: {offerCartId}", "-", null);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"CSDeclineOfferCart Error => OfferCart ID: {offerCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{offerCartId}")]
+        public async Task<IActionResult> AdminAcceptOfferCart(int offerCartId)
+        {
+            try
+            {
+                await _offerCartService.AdminAcceptOfferCartAsync(offerCartId);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"AdminAcceptOfferCart Success => OfferCart ID: {offerCartId}", "-", null);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"AdminAcceptOfferCart Error => OfferCart ID: {offerCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpPut("{offerCartId}")]
+        public async Task<IActionResult> AdminDeclineOfferCart(int offerCartId)
+        {
+            try
+            {
+                await _offerCartService.AdminDeclineOfferCartAsync(offerCartId);
+                await _logService.AddLogAsync("Information", "OfferCartController", $"AdminDeclineOfferCart Success => OfferCart ID: {offerCartId}", "-", null);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"AdminDeclineOfferCart Error => OfferCart ID: {offerCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AdminApprovedOfferCarts()
+        {
+            try
+            {
+                IEnumerable<OfferCart> offerCarts = await _offerCartService.AdminApprovedOfferCartsAsync();
+                if (offerCarts != null)
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"AdminApprovedOfferCarts Success", "-", null);
+                    return Ok(offerCarts);
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"AdminApprovedOfferCarts Error", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AdminWaitingOfferCarts()
+        {
+            try
+            {
+                IEnumerable<OfferCart> offerCarts = await _offerCartService.AdminWaitingOfferCartsAsync();
+                if (offerCarts != null)
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"AdminWaitingOfferCarts Success", "-", null);
+                    return Ok(offerCarts);
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"AdminWaitingOfferCarts Error", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("{offerCartId}")]
+        public async Task<IActionResult> GetUpdatePriceOfferCart(int offerCartId)
+        {
+            try
+            {
+                OfferCartPriceDTO offerCartPriceDto = await _offerCartService.GetUpdateOfferCartPriceAsync(offerCartId);
+                if (offerCartPriceDto != null)
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"GetUpdatePriceOfferCart Success => OfferCart ID: {offerCartId}", "-", null);
+                    return Ok(offerCartPriceDto);
+                }
+                else
+                    return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"GetUpdatePriceOfferCart Error => OfferCart ID: {offerCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateOfferCartPrice(OfferCartPriceDTO offerCartPriceDTO)
+        {
+            try
+            {
+                bool result = await _offerCartService.UpdateOfferCartPriceAsync(offerCartPriceDTO);
+                if (result) return Ok(offerCartPriceDTO);
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"UpdateOfferCartPrice Error => OfferCart ID: {offerCartPriceDTO.OfferCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
     }
 }

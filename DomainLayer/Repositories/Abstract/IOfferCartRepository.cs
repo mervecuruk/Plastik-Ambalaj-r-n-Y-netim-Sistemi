@@ -50,5 +50,20 @@ namespace DomainLayer.Repositories.Abstract
         Task<IEnumerable<OfferCart>> AllWaitingRefundRequestByUserId(int userId);
         Task<IEnumerable<OfferCart>> AllCompletedRefundRequestByUserId(int userId);
 
+        // YENİ İŞLEMLER
+        Task<IEnumerable<OfferCart>> CustomerServiceApprovedOfferCartsAsync();
+        Task<IEnumerable<OfferCart>> CustomerServiceWaitingOfferCartsAsync();
+
+        Task<IEnumerable<OfferCart>> AdminApprovedOfferCartsAsync();
+        Task<IEnumerable<OfferCart>> AdminWaitingOfferCartsAsync();
+
+        Task<bool> CustomerServiceAcceptOfferCartAsync(int offerCartId);
+        Task<bool> CustomerServiceDeclineOfferCartAsync(int offerCartId);
+
+        Task<bool> AdminAcceptOfferCartAsync(int offerCartId);
+        Task<bool> AdminDeclineOfferCartAsync(int offerCartId);
+
+        Task<OfferCart> GetUpdateOfferCartPriceAsync(int offerCartId);
+        Task<bool> UpdateOfferCartPriceAsync(OfferCart offerCart);
     }
 }

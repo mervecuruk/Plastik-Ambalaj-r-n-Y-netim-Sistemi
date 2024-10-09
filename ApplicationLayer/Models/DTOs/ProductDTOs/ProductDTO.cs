@@ -12,7 +12,7 @@ namespace ApplicationLayer.Models.DTOs.ProductDTOs
         public string ProductName { get; set; }
         public decimal Price { get; set; }
         public int Likes { get; set; }
-        public string ImageUrl { get; set; }
+        public List<string> ImageUrls { get; set; }
         public bool IsActive { get; set; }
     }
 }

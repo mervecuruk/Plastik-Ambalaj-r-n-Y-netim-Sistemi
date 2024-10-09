@@ -400,7 +400,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         /// <exception cref="NotImplementedException"></exception>
         public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByAdminAsync()
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.IsActive == true).ToListAsync();
             if (result == null) return null;
             else return result;
         }
@@ -411,7 +411,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         /// <returns></returns>
         public async Task<IEnumerable<OfferCart>> RefundRequestOfferCardsByCustomerServiceAsync()
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false && x.IsActive == true).ToListAsync();
             if (result == null) return null;
             else
             {
@@ -480,7 +480,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         /// <exception cref="NotImplementedException"></exception>
         public async Task<IEnumerable<OfferCart>> RefundRequestAllAcceptAsync()
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true && x.IsActive == true).ToListAsync();
             if (result == null) return null;
             else return result;
         }
@@ -493,7 +493,7 @@ namespace InfrastructureLayer.Repositories.Concrete
         /// <exception cref="NotImplementedException"></exception>
         public async Task<IEnumerable<OfferCart>> AllCompletedRefundRequestByUserId(int userId)
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == true && x.AcceptRefundRequest == true && x.IsActive == true).ToListAsync();
             if (result == null) return null;
             else return result;
         }
@@ -506,9 +506,163 @@ namespace InfrastructureLayer.Repositories.Concrete
         /// <exception cref="NotImplementedException"></exception>
         public async Task<IEnumerable<OfferCart>> AllWaitingRefundRequestByUserId(int userId)
         {
-            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false && x.AcceptRefundRequest == false).ToListAsync();
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.IsRefundRequest == true && x.RefundCustomerService == false && x.AcceptRefundRequest == false && x.IsActive == true).ToListAsync();
             if (result == null) return null;
             else return result;
+        }
+
+        //YENİ EKLENEN
+        //YENİ EKLENEN
+        //YENİ EKLENEN
+
+
+        /// <summary>
+        /// Customer Service'in onayladığı tüm OfferCartlar Döner
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> CustomerServiceApprovedOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptCustomerService == true && x.IsActive == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+
+        /// <summary>
+        /// Customer Service'in onaylamadığı tüm OfferCartları Döner
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> CustomerServiceWaitingOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptCustomerService == false && x.IsActive == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+
+        /// <summary>
+        /// Customer Service'in OfferCart onaylaması
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> CustomerServiceAcceptOfferCartAsync(int offerCartId)
+        {
+            OfferCart result = await _context.OfferCarts.FindAsync(offerCartId);
+            if (result == null) return false;
+            else
+            {
+                result.AcceptCustomerService = true;
+                result.UpdateDate = DateTime.Now;
+                _context.OfferCarts.Update(result);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+
+        /// <summary>
+        /// CustomerService için OfferCart red işlemini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> CustomerServiceDeclineOfferCartAsync(int offerCartId)
+        {
+            OfferCart result = await _context.OfferCarts.FindAsync(offerCartId);
+            if (result == null) return false;
+            else
+            {
+                if (result.AcceptAdmin == true) return false;
+                else
+                {
+                    result.AcceptCustomerService = false;
+                    result.UpdateDate = DateTime.Now;
+                    _context.OfferCarts.Update(result);
+                    return await _context.SaveChangesAsync() > 0;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Admin için OfferCart onaylamasını yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> AdminAcceptOfferCartAsync(int offerCartId)
+        {
+            OfferCart result = await _context.OfferCarts.FindAsync(offerCartId);
+            if (result == null) return false;
+            else
+            {
+                result.UpdateDate = DateTime.Now;
+                result.AcceptAdmin = true;
+                _context.OfferCarts.Update(result);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+
+        /// <summary>
+        /// Admin için OfferCart reddini yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> AdminDeclineOfferCartAsync(int offerCartId)
+        {
+            OfferCart result = await _context.OfferCarts.FindAsync(offerCartId);
+            if (result == null) return false;
+            else
+            {
+                result.UpdateDate = DateTime.Now;
+                result.AcceptAdmin = false;
+                _context.OfferCarts.Update(result);
+                return await _context.SaveChangesAsync() > 0;
+            }
+        }
+
+        /// <summary>
+        /// Admin için onay bekleyen Tüm OfferCartları Döndürür
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> AdminApprovedOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptAdmin == true && x.AcceptCustomerService == true && x.IsActive == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+        /// <summary>
+        /// Admin için Onaylanmış tüm OfferCartları Döndürür
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> AdminWaitingOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptAdmin == false && x.AcceptCustomerService == true && x.IsActive == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+
+        /// <summary>
+        /// Fiyatı güncellenmek istenen OfferCart'ı döner
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<OfferCart> GetUpdateOfferCartPriceAsync(int offerCartId)
+        {
+            OfferCart result = await _context.OfferCarts.FindAsync(offerCartId);
+            if (result == null) return null;
+            else return result;
+        }
+
+
+        /// <summary>
+        /// OfferCart'ın TotalPrice Güncelleme işlemini yapar
+        /// </summary>
+        /// <param name="offerCart"></param>
+        /// <returns></returns>
+        public async Task<bool> UpdateOfferCartPriceAsync(OfferCart offerCart)
+        {
+            _context.OfferCarts.Update(offerCart);
+            return await _context.SaveChangesAsync() > 0;
         }
 
     }

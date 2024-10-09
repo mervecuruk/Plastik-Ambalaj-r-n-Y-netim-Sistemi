@@ -399,5 +399,127 @@ namespace ApplicationLayer.Services.OfferCartService
             _mapper.Map(offerCart, oldOfferCart);
             return await _offerCartRepository.UpdateOfferCartAsync(oldOfferCart);
         }
+
+
+        // YENİ EKLENENLER
+        // YENİ EKLENENLER
+        // YENİ EKLENENLER
+
+
+        /// <summary>
+        /// Customer Service'in onayladığı tüm OfferCartları Döner
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> CustomerServiceApprovedOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.CustomerServiceApprovedOfferCartsAsync();
+            return result;
+        }
+
+        /// <summary>
+        /// Customer Service'in onayladığı tüm OfferCartları Döner
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> CustomerServiceWaitingOfferCartsAsync()
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.CustomerServiceWaitingOfferCartsAsync();
+            return result;
+        }
+
+
+        /// <summary>
+        /// CustomerService Onaylama işlemi yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> CustomerServiceAcceptOfferCartAsync(int offerCartId)
+        {
+            return await _offerCartRepository.CustomerServiceAcceptOfferCartAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// CustomerService reddetme işlemi yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> CustomerServiceDeclineOfferCartAsync(int offerCartId)
+        {
+            return await _offerCartRepository.CustomerServiceDeclineOfferCartAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// Admin için onaylama işlemi yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> AdminAcceptOfferCartAsync(int offerCartId)
+        {
+            return await _offerCartRepository.AdminAcceptOfferCartAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// Admin için reddetme işlemi yapar
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<bool> AdminDeclineOfferCartAsync(int offerCartId)
+        {
+            return await _offerCartRepository.AdminDeclineOfferCartAsync(offerCartId);
+        }
+
+        /// <summary>
+        /// Admin için Onaylanmış tüm OfferCartları döndürür
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> AdminApprovedOfferCartsAsync()
+        {
+            return await _offerCartRepository.AdminApprovedOfferCartsAsync();
+        }
+
+        /// <summary>
+        /// Admin için onay bekleyen tüm OfferCartları Döndürür
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> AdminWaitingOfferCartsAsync()
+        {
+            return await _offerCartRepository.AdminWaitingOfferCartsAsync();
+        }
+
+        /// <summary>
+        /// Fiyatı güncellenmek istenen OfferCart'ı döner
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<OfferCartPriceDTO> GetUpdateOfferCartPriceAsync(int offerCartId)
+        {
+            OfferCart result = await _offerCartRepository.GetUpdateOfferCartPriceAsync(offerCartId);
+            if (result == null) return null;
+            else
+            {
+                OfferCartPriceDTO offerCartPriceDTO = new OfferCartPriceDTO()
+                {
+                    OfferCartId = result.OfferCartId,
+                    TotalPrice = result.TotalPrice
+                };
+                return offerCartPriceDTO;
+            }
+        }
+
+
+        /// <summary>
+        /// OfferCart'ın TotalPrice Güncelleme işlemini yapar
+        /// </summary>
+        /// <param name="offerCartPriceDTO"></param>
+        /// <returns></returns>
+        public async Task<bool> UpdateOfferCartPriceAsync(OfferCartPriceDTO offerCartPriceDTO)
+        {
+            OfferCart result = await _offerCartRepository.GetUpdateOfferCartPriceAsync(offerCartPriceDTO.OfferCartId);
+            if (result == null) return false;
+            else
+            {
+                result.TotalPrice = offerCartPriceDTO.TotalPrice;
+                return await _offerCartRepository.UpdateOfferCartPriceAsync(result);
+            }
+        }
     }
 }

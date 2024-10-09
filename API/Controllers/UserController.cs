@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer.Models.DTOs.UserDTOs;
+using ApplicationLayer.Services.JwtService;
 using ApplicationLayer.Services.UserService;
 using DomainLayer.Entities.Concrete;
 using InfrastructureLayer.Contexts;
@@ -7,7 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace API.Controllers
 {
@@ -19,11 +23,19 @@ namespace API.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly AppDbContext _context;
 
-        public UserController(IUserService userService, SignInManager<AppUser> signInManager, AppDbContext context)
+        //Alttakiler Jwt için eklendi....
+        private readonly IConfiguration _config;
+        private readonly UserManager<AppUser> _userManager;
+        private readonly JwtService _jwtService;
+
+        public UserController(IUserService userService, SignInManager<AppUser> signInManager, AppDbContext context, IConfiguration config, UserManager<AppUser> userManager, JwtService jwtService)
         {
             _userService = userService;
             _signInManager = signInManager;
             _context = context;
+            _config = config;
+            _userManager = userManager;
+            _jwtService = jwtService;
         }
 
 
@@ -62,7 +74,7 @@ namespace API.Controllers
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUserDetail(int userId)
         {
-            var user=await _userService.GetUserDetailAsync(userId);
+            var user = await _userService.GetUserDetailAsync(userId);
             if (user is null) return NotFound("Kullanıcı bulunamadı");
             return Ok(user);
         }
@@ -77,8 +89,8 @@ namespace API.Controllers
         [HttpPut("{userId}")]
         public async Task<IActionResult> UpdateUser(int userId, [FromBody] UpdateUserDTO updateUserDTO)
         {
-            var user = await _userService.UpdateUserAsync(userId,updateUserDTO);
-            if(user) return Ok(user);
+            var user = await _userService.UpdateUserAsync(userId, updateUserDTO);
+            if (user) return Ok(user);
             else return BadRequest();
         }
 
@@ -115,6 +127,26 @@ namespace API.Controllers
                 return Ok(result);
             }
         }
+
+        //JWT için eklenen login ve jwt generate
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginDTO model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var token = _jwtService.GenerateJwtToken(user, roles);
+                return Ok(new TokenResponse
+                {
+                    Token = token,
+                    UserRoles = roles.ToList() // Rolleri döndür
+                });
+            }
+            return Unauthorized();
+        }
+
+        //*********JWT END****************//
 
         /// <summary>
         /// Kullanıcı LOGOUT

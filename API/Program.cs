@@ -1,6 +1,7 @@
 using ApplicationLayer.Mapper;
 using ApplicationLayer.Services.BlogService;
 using ApplicationLayer.Services.CategoryService;
+using ApplicationLayer.Services.JwtService;
 using ApplicationLayer.Services.LogService;
 using ApplicationLayer.Services.OfferCartMessageService;
 using ApplicationLayer.Services.OfferCartService;
@@ -13,6 +14,7 @@ using DomainLayer.Repositories.Abstract;
 using InfrastructureLayer.Contexts;
 using InfrastructureLayer.Repositories.Concrete;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -51,7 +53,42 @@ namespace API
 
             builder.Services.AddControllers().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); // Loop a girersek bu kodu eklememiz gerekiyor.!!!!!!!
 
-            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
+            // appsettings.json'dan JwtSettings'i DI konteynerine ekleyin
+            builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("Jwt"));
+
+            // JWT konfigürasyonu
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = builder.Configuration["Jwt:Issuer"],
+                    ValidAudience = builder.Configuration["Jwt:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+                };
+            });
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+                options.AddPolicy("ContentManagerOnly", policy => policy.RequireRole("ContentManager"));
+                options.AddPolicy("CustomerServiceOnly", policy => policy.RequireRole("CustomerService"));
+                options.AddPolicy("VisitorOnly", policy => policy.RequireRole("Visitor"));
+            });
+
+
+            //*****************************************JWT END***********************//
 
             builder.Services.AddAutoMapper(x => x.AddProfile(typeof(Mapping)));
 
@@ -62,6 +99,7 @@ namespace API
             builder.Services.AddScoped<IBlogRepository, BlogRepository>();
             builder.Services.AddScoped<ILogRepository, LogRepository>();
             builder.Services.AddScoped<ISssRepository, SssRepository>();
+            builder.Services.AddScoped<JwtService>();
 
 
             builder.Services.AddScoped<IUserService, UserService>();
@@ -102,24 +140,24 @@ namespace API
             app.Run();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        //{
+        //    if (env.IsDevelopment())
+        //    {
+        //        app.UseDeveloperExceptionPage();
+        //    }
 
-            app.UseCors("AllowSpecificOrigins"); // CORS politikasýný burada uyguluyoruz
+        //    app.UseCors("AllowSpecificOrigins"); // CORS politikasýný burada uyguluyoruz
 
-            app.UseRouting();
+        //    app.UseRouting();
 
-            app.UseAuthorization();
+        //    app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-        }
+        //    app.UseEndpoints(endpoints =>
+        //    {
+        //        endpoints.MapControllers();
+        //    });
+        //}
 
 
 
