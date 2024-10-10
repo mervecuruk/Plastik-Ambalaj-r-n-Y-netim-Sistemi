@@ -15,5 +15,9 @@ namespace DomainLayer.Repositories.Abstract
         //resim yükleme metodu
         Task<bool> UploadProductImageAsync(Product product);
         Task<bool> FindProduct(int ProductId);
+
+        Task<int> IncreaseLikeAsync(int productId);
+        Task<int> DecreaseLikeAsync(int productId);
+        Task<int> IncreaseViewAsync(int productId);
     }
 }

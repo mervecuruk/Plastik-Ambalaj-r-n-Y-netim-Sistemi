@@ -20,5 +20,13 @@ namespace ApplicationLayer.Services.ProductService
         Task<bool> UploadProductImageAsync(UploadImageDTO uploadImageDTO);
 
         Task<bool> FindProduct(int ProductId);
+
+        Task<IEnumerable<ListProductDTO>> GetAllVisitorProductsAsync();
+
+
+        //beğeni butonu 
+        Task<int> IncreaseLikeAsync(int productId);
+        Task<int> DecreaseLikeAsync(int productId);
+        Task<int> IncreaseViewAsync(int productId);
     }
 }

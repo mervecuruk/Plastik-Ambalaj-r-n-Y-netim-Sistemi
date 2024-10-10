@@ -65,5 +65,7 @@ namespace DomainLayer.Repositories.Abstract
 
         Task<OfferCart> GetUpdateOfferCartPriceAsync(int offerCartId);
         Task<bool> UpdateOfferCartPriceAsync(OfferCart offerCart);
+
+        Task<IEnumerable<OfferCart>> GetOfferCartsByUserIdAsync(int appUserId);
     }
 }

@@ -73,5 +73,7 @@ namespace ApplicationLayer.Services.OfferCartService
 
         Task<OfferCartPriceDTO> GetUpdateOfferCartPriceAsync(int offerCartId);
         Task<bool> UpdateOfferCartPriceAsync(OfferCartPriceDTO offerCartPriceDTO);
+
+        Task<IEnumerable<OfferCart>> GetOfferCartsByUserIdAsync(int appUserId);
     }
 }

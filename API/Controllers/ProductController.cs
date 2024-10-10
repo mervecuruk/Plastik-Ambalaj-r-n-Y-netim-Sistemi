@@ -123,5 +123,55 @@ namespace API.Controllers
             if (!result) return NotFound();
             return Ok(result);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllVisitorProducts()
+        {
+            return Ok(await _productService.GetAllVisitorProductsAsync());
+        }
+
+
+        //beğeni butonu için
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> IncreaseLike(int productId)
+        {
+            try
+            {
+                var newLikeCount = await _productService.IncreaseLikeAsync(productId);
+                return Ok(newLikeCount);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> DecreaseLike(int productId)
+        {
+            try
+            {
+                var newLikeCount = await _productService.DecreaseLikeAsync(productId);
+                return Ok(newLikeCount);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPut("{productId}")]
+        public async Task<IActionResult> IncreaseView(int productId)
+        {
+            try
+            {
+                var newViewCount = await _productService.IncreaseViewAsync(productId);
+                return Ok(newViewCount);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
     }
 }

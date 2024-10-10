@@ -521,5 +521,17 @@ namespace ApplicationLayer.Services.OfferCartService
                 return await _offerCartRepository.UpdateOfferCartPriceAsync(result);
             }
         }
+
+        /// <summary>
+        /// Kullanıcı ID'ye ait olan tüm Offer Cartları döndürür
+        /// </summary>
+        /// <param name="appUserId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsByUserIdAsync(int appUserId)
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.GetOfferCartsByUserIdAsync(appUserId);
+            if (result == null) return null;
+            else return result;
+        }
     }
 }

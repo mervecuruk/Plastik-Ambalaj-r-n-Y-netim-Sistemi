@@ -23,6 +23,7 @@ namespace ApplicationLayer.Mapper
             CreateMap<Product, ProductDTO>().ReverseMap();
             CreateMap<Product, UpdateProductDTO>().ReverseMap();
             CreateMap<Product, ProductDetailsDTO>().ReverseMap();
+            CreateMap<Product, ListProductDTO>().ReverseMap();
 
             CreateMap<Category, AddCategoryDTO>().ReverseMap();
             CreateMap<Category, CategoryDTO>().ReverseMap();

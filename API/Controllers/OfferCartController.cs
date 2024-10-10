@@ -506,7 +506,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpPost("{offerCartId}")]
+        [HttpPut("{offerCartId}")]
         public async Task<IActionResult> ApproveOfferByVisitor(int offerCartId)
         {
             try
@@ -803,6 +803,30 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 await _logService.AddLogAsync("Error", "OfferCartController", $"UpdateOfferCartPrice Error => OfferCart ID: {offerCartPriceDTO.OfferCartId}", ex.ToString(), null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("{appUserId}")]
+        public async Task<IActionResult> GetOfferCartsByUserId(int appUserId)
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetOfferCartsByUserIdAsync(appUserId);
+                if (result == null)
+                {
+                    await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsByUserId Error", "GetOfferCartsByUserId Error", null);
+                    return BadRequest();
+                }
+                else
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartsByUserId Success => AppUser ID: {appUserId}", "-", null);
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsByUserId Error", ex.Message, null);
                 return BadRequest();
             }
         }

@@ -665,5 +665,19 @@ namespace InfrastructureLayer.Repositories.Concrete
             return await _context.SaveChangesAsync() > 0;
         }
 
+        /// <summary>
+        /// Kullanıcı ID'ye ait olan tüm Offer Cartları döndürür
+        /// </summary>
+        /// <param name="offerCartId"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsByUserIdAsync(int appUserId)
+        {
+            return await _context.OfferCarts
+                .Include(oc => oc.AppUser)
+                .Include(oc => oc.Product)
+                .Include(oc => oc.OfferCartMessages)
+                .Where(x => x.IsActive == true && x.AppUserId == appUserId)
+                .ToListAsync();
+        }
     }
 }
