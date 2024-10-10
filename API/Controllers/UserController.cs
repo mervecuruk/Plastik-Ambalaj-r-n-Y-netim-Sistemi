@@ -140,7 +140,8 @@ namespace API.Controllers
                 return Ok(new TokenResponse
                 {
                     Token = token,
-                    UserRoles = roles.ToList() // Rolleri döndür
+                    UserRoles = roles.ToList(), // Rolleri döndür
+                    UserId = user.Id.ToString()
                 });
             }
             return Unauthorized();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DomainLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,7 @@ namespace ApplicationLayer.Models.DTOs.ProductDTOs
         public int Likes { get; set; }
         public List<string> ImageUrls { get; set; }
         public bool IsActive { get; set; }
+        public int CategoryId { get; set; }
+        public Category? Category { get; set; }
     }
 }

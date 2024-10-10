@@ -10,5 +10,6 @@ namespace ApplicationLayer.Services.JwtService
     {
         public string Token { get; set; }
         public List<string> UserRoles { get; set; } // Kullanıcı rollerini almak için
+        public string UserId { get; set; }
     }
 }

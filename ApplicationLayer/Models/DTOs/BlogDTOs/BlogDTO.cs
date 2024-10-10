@@ -13,7 +13,8 @@ namespace ApplicationLayer.Models.DTOs.BlogDTOs
         public string Title { get; set; }
         public string Content { get; set; }
         public string? ImageUrl { get; set; }
-
+        public DateTime AddedDate { get; set; }
+        public int AppUserId { get; set; }
         public AppUser AppUser { get; set; }
 
     }
