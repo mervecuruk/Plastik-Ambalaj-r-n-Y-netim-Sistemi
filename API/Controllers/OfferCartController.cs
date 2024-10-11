@@ -149,7 +149,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("{offerCartId}")]
+        [HttpPut("{offerCartId}")]
         public async Task<IActionResult> SetFinalization(int offerCartId)
         {
             try
@@ -167,7 +167,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("{offerCartId}")]
+        [HttpPut("{offerCartId}")]
         public async Task<IActionResult> SetMoldProduction(int offerCartId)
         {
             try
@@ -185,7 +185,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("{offerCartId}")]
+        [HttpPut("{offerCartId}")]
         public async Task<IActionResult> ShowSampleButton(int offerCartId)
         {
             try
@@ -827,6 +827,80 @@ namespace API.Controllers
             catch (Exception ex)
             {
                 await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsByUserId Error", ex.Message, null);
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetOfferCartsWaitingSample()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetOfferCartsWaitingSampleAsync();
+                if (result == null)
+                {
+                    await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingSample Error", "GetOfferCartsWaitingSample Error", null);
+                    return BadRequest();
+                }
+                else
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartsWaitingSample Success", "-", null);
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingSample Error", ex.Message, null);
+                return BadRequest();
+            }
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetOfferCartsWaitingMold()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetOfferCartsWaitingMoldAsync();
+                if (result == null)
+                {
+                    await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingMold Error", "GetOfferCartsWaitingMold Error", null);
+                    return BadRequest();
+                }
+                else
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartsWaitingMold Success", "-", null);
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingMold Error", ex.Message, null);
+                return BadRequest();
+            }
+        }
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetOfferCartsWaitingFinalization()
+        {
+            try
+            {
+                IEnumerable<OfferCart> result = await _offerCartService.GetOfferCartsWaitingFinalizationAsync();
+                if (result == null)
+                {
+                    await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingFinalization Error", "GetOfferCartsWaitingFinalization Error", null);
+                    return BadRequest();
+                }
+                else
+                {
+                    await _logService.AddLogAsync("Information", "OfferCartController", $"GetOfferCartsWaitingFinalization Success", "-", null);
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                await _logService.AddLogAsync("Error", "OfferCartController", $"GetOfferCartsWaitingFinalization Error", ex.Message, null);
                 return BadRequest();
             }
         }

@@ -34,7 +34,7 @@ namespace API
             {
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
-                    builder.WithOrigins("http://localhost:5272") // Frontend'in URL'sini buraya ekleyin
+                    builder.WithOrigins("https://mvc20240918115122.azurewebsites.net") // Frontend'in URL'sini buraya ekleyin
                            .AllowAnyHeader()
                            .AllowAnyMethod();
                 });
@@ -140,24 +140,24 @@ namespace API
             app.Run();
         }
 
-        //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        //{
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //    }
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-        //    app.UseCors("AllowSpecificOrigins"); // CORS politikasýný burada uyguluyoruz
+            app.UseCors("AllowSpecificOrigins"); // CORS politikasýný burada uyguluyoruz
 
-        //    app.UseRouting();
+            app.UseRouting();
 
-        //    app.UseAuthorization();
+            app.UseAuthorization();
 
-        //    app.UseEndpoints(endpoints =>
-        //    {
-        //        endpoints.MapControllers();
-        //    });
-        //}
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+        }
 
 
 

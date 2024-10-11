@@ -265,7 +265,9 @@ namespace InfrastructureLayer.Repositories.Concrete
             var offerCart = await _context.OfferCarts.FindAsync(offerCartId);
             if (offerCart != null && offerCart.IsApproved && !offerCart.IsSample)
             {
-                // Numune butonu gösterilsin
+                offerCart.IsSample = true;
+                _context.OfferCarts.Update(offerCart);
+                await _context.SaveChangesAsync();
                 return true;
             }
             return false;
@@ -678,6 +680,27 @@ namespace InfrastructureLayer.Repositories.Concrete
                 .Include(oc => oc.OfferCartMessages)
                 .Where(x => x.IsActive == true && x.AppUserId == appUserId)
                 .ToListAsync();
+        }
+
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingSampleAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptAdmin == true && x.AcceptCustomerService == true && x.IsActive == true && x.AcceptVisitor == true && x.IsSample == false && x.IsApproved == true).ToListAsync();
+            if (result == null) return null;
+            else return result;
+        }
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingMoldAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptAdmin == true && x.AcceptCustomerService == true && x.IsActive == true && x.AcceptVisitor == true && x.IsSample == true && x.IsApproved == true && x.IsMold == false).ToListAsync();
+            if (result == null) return null;
+            else return result;
+
+        }
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingFinalizationAsync()
+        {
+            IEnumerable<OfferCart> result = await _context.OfferCarts.Where(x => x.AcceptAdmin == true && x.AcceptCustomerService == true && x.IsActive == true && x.AcceptVisitor == true && x.IsSample == true && x.IsApproved == true && x.IsMold == true && x.IsFinalization == false).ToListAsync();
+            if (result == null) return null;
+            else return result;
+
         }
     }
 }

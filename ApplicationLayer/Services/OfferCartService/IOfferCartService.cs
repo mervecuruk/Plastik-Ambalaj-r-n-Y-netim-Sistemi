@@ -75,5 +75,9 @@ namespace ApplicationLayer.Services.OfferCartService
         Task<bool> UpdateOfferCartPriceAsync(OfferCartPriceDTO offerCartPriceDTO);
 
         Task<IEnumerable<OfferCart>> GetOfferCartsByUserIdAsync(int appUserId);
+
+        Task<IEnumerable<OfferCart>> GetOfferCartsWaitingSampleAsync();
+        Task<IEnumerable<OfferCart>> GetOfferCartsWaitingMoldAsync();
+        Task<IEnumerable<OfferCart>> GetOfferCartsWaitingFinalizationAsync();
     }
 }

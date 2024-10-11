@@ -533,5 +533,24 @@ namespace ApplicationLayer.Services.OfferCartService
             if (result == null) return null;
             else return result;
         }
+
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingSampleAsync()
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.GetOfferCartsWaitingSampleAsync();
+            if (result == null) return null;
+            else return result;
+        }
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingMoldAsync()
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.GetOfferCartsWaitingMoldAsync();
+            if (result == null) return null;
+            else return result;
+        }
+        public async Task<IEnumerable<OfferCart>> GetOfferCartsWaitingFinalizationAsync()
+        {
+            IEnumerable<OfferCart> result = await _offerCartRepository.GetOfferCartsWaitingFinalizationAsync();
+            if (result == null) return null;
+            else return result;
+        }
     }
 }
