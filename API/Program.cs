@@ -34,7 +34,7 @@ namespace API
             {
                 options.AddPolicy("AllowSpecificOrigins", builder =>
                 {
-                    builder.WithOrigins("https://mvc20240918115122.azurewebsites.net") // Frontend'in URL'sini buraya ekleyin
+                    builder.WithOrigins("http://localhost:5272") // Frontend'in URL'sini buraya ekleyin
                            .AllowAnyHeader()
                            .AllowAnyMethod();
                 });

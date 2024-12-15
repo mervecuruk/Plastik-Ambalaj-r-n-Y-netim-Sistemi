@@ -22,9 +22,9 @@ namespace InfrastructureLayer.Contexts
         {
             base.OnConfiguring(optionsBuilder);
 
-            //optionsBuilder.UseSqlServer("Server=DESKTOP-LGLV727\\SQLEXPRESS;Database=PlastikDBLogger2;Trusted_Connection=True;Integrated Security=True;Encrypt=False;");
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-0MKLK4U5\\SQLEXPRESS;Initial Catalog=BitirmeLogDbContext;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;Connection Timeout=30;");
 
-            optionsBuilder.UseSqlServer("Server=tcp:grup3.database.windows.net,1433;Initial Catalog=PPMSLogDatabase;Persist Security Info=False;User ID=grup3;Password=123Kd.01;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", options => options.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null));
+            //optionsBuilder.UseSqlServer("Server=tcp:grup3.database.windows.net,1433;Initial Catalog=PPMSLogDatabase;Persist Security Info=False;User ID=grup3;Password=123Kd.01;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;", options => options.EnableRetryOnFailure(maxRetryCount: 5, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null));
         }
     }
 }
